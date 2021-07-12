@@ -1,0 +1,142 @@
+---
+title: "Capital Markets Data - Monthly Chartpack"
+author: "Steven Sabol"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+output:
+  html_document:
+    css: ink.css
+    highlight: null
+    mathjax: null
+    number_sections: yes
+    self_contained: no
+    theme: united
+    toc: yes
+    toc_depth: 3
+    lof: yes
+  pdf_document:
+    toc: yes
+    toc_depth: 5
+abstract: This is the Capital Markets Data Monthly Chartpack.  For more information
+  about the underlying data please email me at steven@capitalmarketsdata.com
+---
+
+```{r setup_cmd_charts, include=FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+Sys.setenv(JAVA_HOME='C:\\Program Files\\Java\\jre1.8.0_271') # for 64-bit versi
+
+library(dplyr)
+library(dbplyr)
+library(DBI)
+library(knitr)
+library(zoo)
+library(ggplot2)
+library(xts)
+library(roll)
+library(readr)
+library(Quandl)
+library(readxl)
+library(lubridate)
+library(reshape2)
+library(tis)
+
+cmd_con <- dbConnect(odbc::odbc(), .connection_string = "Driver={MySQL ODBC 8.0 Unicode Driver};", Server = "localhost", Database = "cmdmd", UID = 'root',PWD = "Markets3@", Port = 3306)
+
+```
+
+```{sql, connection = cmd_con, output.var = "mydataframe2"}
+
+SELECT * FROM cmd_main ;
+
+```
+
+```{r, echo= FALSE}
+data <- mydataframe2[,c("Date","cmd_id","value")]
+casted <- data.frame(t(acast(data = data, formula = cmd_id ~ Date )))
+D <- data.frame(Date= as.Date(rownames(casted)),casted,row.names = NULL)
+
+nberShade.ggplot <- function(gg = ggplot2::last_plot(),
+                             fill = "grey80",
+                             color = NA,
+                             size = 0.5, 
+                             alpha = 0.5,
+                             xrange = NULL,
+                             openShade = TRUE, ...){
+  Start <- End <- ymin <- ymax <-
+    "Defined here to defeat 'no visible binding' R CMD check warnings"
+  yrng <- extendrange(eval(gg$mapping$y, gg$data))
+  nber.dates <- transform(data.frame(as.data.frame(nberDates()),
+                                     ymin = yrng[1],
+                                     ymax = yrng[2]), 
+                          Start = as.Date(as.character(Start), format = "%Y%m%d"),
+                          End = as.Date(as.character(End), format = "%Y%m%d"))
+  
+  if( is.null(xrange) ){
+    if( openShade ){
+      nr <- nrow(nber.dates)
+      if(is.na(nber.dates[nr, "End"])) nber.dates[nr, "End"] <- Sys.Date()
+    }  
+  }
+  else {
+    xrange <- as.Date(xrange)
+    nber.dates <- subset(nber.dates, (End > xrange[1]) | (is.na(End)))
+    if(nber.dates[1, "Start"] < xrange[1]) 
+      nber.dates[1, "Start"] <- xrange[1]    
+    nber.dates <- subset(nber.dates, Start < xrange[2])
+    shouldReplaceLast <- (nber.dates[dim(nber.dates)[1], "End"] > xrange[2])
+    shouldReplaceLast <- ifelse(is.na(shouldReplaceLast), TRUE, shouldReplaceLast)
+    if( openShade | shouldReplaceLast ){
+      nber.dates[ dim(nber.dates)[1], "End"] <- xrange[2]    
+    }
+  }
+  
+  gg <- gg + ggplot2::geom_rect( ggplot2::aes(xmin = Start, xmax = End, x = NULL, y = NULL, 
+                                                ymin = ymin, ymax = ymax), color = color, fill = fill, 
+                                 size = 0.5, alpha = 0.5, data = nber.dates) + 
+                                   ggplot2::scale_y_continuous(expand = c(0,0))
+  
+  if( ! openShade ){
+    ## color = fill is the behavior in nberShade.default
+    gg <- gg + ggplot2::geom_vline(xintercept = as.numeric(tail(nber.dates, 1)$Start), 
+                                    color = fill, size = 1.5)
+  }
+  
+  return(gg)
+} 
+
+```
+
+## Example Plot
+
+```{r issplotother2, message=FALSE, warning=FALSE, echo=FALSE, fig.height=6.5, fig.width=11.5,cache=FALSE}
+
+Figure_issuance3      <- ggplot(data=D, aes(x=Date)) + xlab("") + ylim(range(-10,15)) + ylab("")
+g1 <- geom_line(aes(y=wpi, color="Treasury Issuance-to-GDP",linetype="Treasury Issuance-to-GDP"))
+g2 <- geom_line(aes(y=ustotal_iss/wpi, color="Mortgage Originations-to-GDP",linetype="Mortgage Originations-to-GDP"))
+g3 <- geom_line(aes(y=ustotal_iss/ngdpm, color="Muni Issuance-to-GDP",linetype="Muni Issuance-to-GDP"))
+g4 <- geom_line(aes(y=corpbtogdp_ma + corpstockgdp_ma, color="Corporate Bond & Equity Issuance-to-GDP",linetype="Corporate Bond & Equity Issuance-to-GDP"))
+
+color         <- scale_color_manual(" ", breaks=c("Mortgage Originations-to-GDP","Treasury Issuance-to-GDP","Corporate Bond & Equity Issuance-to-GDP","Muni Issuance-to-GDP"), values=c( "Mortgage Originations-to-GDP"="blue", "Treasury Issuance-to-GDP"="red","Corporate Bond & Equity Issuance-to-GDP" = "black","Muni Issuance-to-GDP" ="dark green"))
+linetype      <- scale_linetype_manual(" ", breaks=c("Mortgage Originations-to-GDP","Treasury Issuance-to-GDP","Corporate Bond & Equity Issuance-to-GDP","Muni Issuance-to-GDP"), values=c("Mortgage Originations-to-GDP"=1,"Treasury Issuance-to-GDP"=1,"Corporate Bond & Equity Issuance-to-GDP"=1,"Muni Issuance-to-GDP"=2))
+size          <- scale_size_manual(" ", breaks=c("Mortgage Originations-to-GDP","Treasury Issuance-to-GDP","Corporate Bond & Equity Issuance-to-GDP","Muni Issuance-to-GDP"), values=c("Mortgage Originations-to-GDP"=2,"Treasury Issuance-to-GDP"=2,"Corporate Bond & Equity Issuance-to-GDP"=2,"Muni Issuance-to-GDP"=3))
+title         <- ggtitle("Capital Market Issuance-to-GDP")
+text_options  <- theme(title = element_text(size = rel(1.1))) + theme(legend.text = element_text(size = rel(1.1)))  + theme(legend.title = element_text(size = rel(1.1)))
+Date_opts     <- scale_x_date(limits = c(as.Date("1801-12-01"), as.Date("2021-12-01")), date_breaks = "10 year",date_labels = "%Y")
+leg_pos       <-  theme(legend.position=c(0.05, 0.95), legend.justification = c(0,1),legend.title = element_blank()) 
+sub_labs <- labs(subtitle="Capital Markets Data, 9MMA")
+yscale <- scale_y_continuous(sec.axis = dup_axis())
+
+Figure_issuance3 <- Figure_issuance3 + g3+color +linetype +size + title +text_options  +leg_pos +sub_labs + Date_opts + yscale
+
+nberShade.ggplot(Figure_issuance3) 
+
+#ggsave("C:/Users/sabol/Google Drive/blogposts/issplotother2.jpg" ,height = 6.5,width = 11.5,units = "in")
+
+# Status <- paste(title$title,"#data","#economics","#macro","#R",sep = " ")
+# media_path <- "C:/Users/sabol/Google Drive/blogposts/issplotother2.jpg"
+# tw <- updateStatus(Status, mediaPath = media_path )
+
+#d <- "C:/Users/sabol/Google Drive/blogpostshtml/"
+#withr::with_dir(d, htmlwidgets::saveWidget(partial_bundle(p), "issplotother2.html"))
+
+```
+

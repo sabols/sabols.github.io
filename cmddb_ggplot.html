@@ -184,62 +184,9 @@ This is the Capital Markets Data Monthly Chartpack. For more information about t
 <pre class="sql"><code>
 SELECT * FROM cmd_main ;
 </code></pre>
-<pre class="r"><code>data &lt;- mydataframe2[,c(&quot;Date&quot;,&quot;cmd_id&quot;,&quot;value&quot;)]
-casted &lt;- data.frame(t(acast(data = data, formula = cmd_id ~ Date )))
-D &lt;- data.frame(Date= as.Date(rownames(casted)),casted,row.names = NULL)
-
-nberShade.ggplot &lt;- function(gg = ggplot2::last_plot(),
-                             fill = &quot;grey80&quot;,
-                             color = NA,
-                             size = 0.5, 
-                             alpha = 0.5,
-                             xrange = NULL,
-                             openShade = TRUE, ...){
-  Start &lt;- End &lt;- ymin &lt;- ymax &lt;-
-    &quot;Defined here to defeat &#39;no visible binding&#39; R CMD check warnings&quot;
-  yrng &lt;- extendrange(eval(gg$mapping$y, gg$data))
-  nber.dates &lt;- transform(data.frame(as.data.frame(nberDates()),
-                                     ymin = yrng[1],
-                                     ymax = yrng[2]), 
-                          Start = as.Date(as.character(Start), format = &quot;%Y%m%d&quot;),
-                          End = as.Date(as.character(End), format = &quot;%Y%m%d&quot;))
-  
-  if( is.null(xrange) ){
-    if( openShade ){
-      nr &lt;- nrow(nber.dates)
-      if(is.na(nber.dates[nr, &quot;End&quot;])) nber.dates[nr, &quot;End&quot;] &lt;- Sys.Date()
-    }  
-  }
-  else {
-    xrange &lt;- as.Date(xrange)
-    nber.dates &lt;- subset(nber.dates, (End &gt; xrange[1]) | (is.na(End)))
-    if(nber.dates[1, &quot;Start&quot;] &lt; xrange[1]) 
-      nber.dates[1, &quot;Start&quot;] &lt;- xrange[1]    
-    nber.dates &lt;- subset(nber.dates, Start &lt; xrange[2])
-    shouldReplaceLast &lt;- (nber.dates[dim(nber.dates)[1], &quot;End&quot;] &gt; xrange[2])
-    shouldReplaceLast &lt;- ifelse(is.na(shouldReplaceLast), TRUE, shouldReplaceLast)
-    if( openShade | shouldReplaceLast ){
-      nber.dates[ dim(nber.dates)[1], &quot;End&quot;] &lt;- xrange[2]    
-    }
-  }
-  
-  gg &lt;- gg + ggplot2::geom_rect( ggplot2::aes(xmin = Start, xmax = End, x = NULL, y = NULL, 
-                                                ymin = ymin, ymax = ymax), color = color, fill = fill, 
-                                 size = 0.5, alpha = 0.5, data = nber.dates) + 
-                                   ggplot2::scale_y_continuous(expand = c(0,0))
-  
-  if( ! openShade ){
-    ## color = fill is the behavior in nberShade.default
-    gg &lt;- gg + ggplot2::geom_vline(xintercept = as.numeric(tail(nber.dates, 1)$Start), 
-                                    color = fill, size = 1.5)
-  }
-  
-  return(gg)
-} </code></pre>
 <div id="example-plot" class="section level2" number="0.1">
 <h2 number="0.1"><span class="header-section-number">0.1</span> Example Plot</h2>
 <p><img src="cmddb_ggplot_files/figure-html/issplotother2-1.png" width="1104" /></p>
-<p><img src="https://github.com/sabols/sabols.github.io/blob/master/cmddb_ggplot_files/figure-html/issplotother2-1.png" width="1104" /></p>
 </div>
 
 
