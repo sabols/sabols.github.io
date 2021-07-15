@@ -4,12 +4,6 @@
 .Ruserdata
 .httr-oauth
 helpers/auth.R
-<<<<<<< HEAD
-rsconnect/
-*.Rmd
-=======
-*.Rmd
 cmd_chartpack.Rmd
 issploto2.jpg
 rsconnect
->>>>>>> v1.01
