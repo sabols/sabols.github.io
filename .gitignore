@@ -4,3 +4,7 @@
 .Ruserdata
 .httr-oauth
 helpers/auth.R
+*.Rmd
+cmd_chartpack.Rmd
+issploto2.jpg
+rsconnect

@@ -1,0 +1,2478 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Steven Sabol" />
+
+<meta name="date" content="2021-07-12" />
+
+<title>Capital Markets Data - Monthly Chartpack</title>
+
+<script src="cmd_chartpack_files/header-attrs-2.9/header-attrs.js"></script>
+<script src="cmd_chartpack_files/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="cmd_chartpack_files/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
+<script src="cmd_chartpack_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="cmd_chartpack_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="cmd_chartpack_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="cmd_chartpack_files/navigation-1.1/tabsets.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+      .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+
+
+
+<style type="text/css">
+  p.abstract{
+    text-align: center;
+    font-weight: bold;
+  }
+  div.abstract{
+    margin: auto;
+    width: 90%;
+  }
+</style>
+
+
+
+<link rel="stylesheet" href="ink.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Capital Markets Data - Monthly Chartpack</h1>
+<h4 class="author">Steven Sabol</h4>
+<h4 class="date">July 12, 2021</h4>
+<div class="abstract">
+<p class="abstract">Abstract</p>
+This is the Capital Markets Data Monthly Chartpack. For more information about the underlying data please email me at <a href="mailto:steven@capitalmarketsdata.com" class="email">steven@capitalmarketsdata.com</a>
+</div>
+
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#capital-market-issuance">Capital Market Issuance</a>
+<ul>
+<li><a href="#capital-market-issuance-to-gdp">Capital Market Issuance-to-GDP</a></li>
+<li><a href="#capital-market-issuance-to-gdp-including-t-bills">Capital Market Issuance-to-GDP: Including T-bills</a></li>
+<li><a href="#private-capital-market-and-treasury-issuance-to-gdp">Private Capital Market and Treasury Issuance-to-GDP</a></li>
+<li><a href="#total-capital-market-issuance-to-gdp">Total Capital Market Issuance-to-GDP</a></li>
+<li><a href="#non-treasury-issuance-to-gdp-vs-12m-change-in-10-yr-treasury-yield">Non-Treasury Issuance-to-GDP vs 12m change in 10-yr Treasury Yield</a></li>
+</ul></li>
+<li><a href="#asset-backed-securities">Asset-Backed Securities</a>
+<ul>
+<li><a href="#total-abs-issuance">Total ABS Issuance</a></li>
+<li><a href="#private-label-cmbs-issuance">Private-Label CMBS Issuance</a></li>
+<li><a href="#rmbs-30-day-delinquencies-rate">RMBS 30 Day Delinquencies Rate</a></li>
+<li><a href="#rmbs-conditional-prepayment-rate">RMBS Conditional Prepayment Rate</a></li>
+<li><a href="#rmbs-collateral-balance">RMBS Collateral Balance</a></li>
+<li><a href="#rmbs-annualized-net-losses">RMBS Annualized Net Losses</a></li>
+<li><a href="#auto-abs-30-day-delinquencies-rate">Auto ABS 30 Day Delinquencies Rate</a></li>
+<li><a href="#auto-abs-conditional-prepayment-rate">Auto ABS Conditional Prepayment Rate</a></li>
+<li><a href="#auto-abs-collateral-balance">Auto ABS Collateral Balance</a></li>
+<li><a href="#auto-abs-annualized-net-losses">Auto ABS Annualized Net Losses</a></li>
+</ul></li>
+<li><a href="#treasury-and-federal-debt">Treasury and Federal Debt</a>
+<ul>
+<li><a href="#treasury-issuance-to-gdp">Treasury Issuance-to-GDP</a></li>
+<li><a href="#treasury-note-and-bond-issuance-to-gdp">Treasury Note and Bond Issuance-to-GDP</a></li>
+<li><a href="#total-treasury-issuance-to-gdp">Total Treasury Issuance-to-GDP</a></li>
+<li><a href="#treasuries-outstanding-to-gdp">Treasuries Outstanding-to-GDP</a></li>
+<li><a href="#u.s.-gross-federal-debt-outstanding-to-gdp">U.S. Gross Federal Debt Outstanding-to-GDP</a></li>
+<li><a href="#average-maturity-of-privately-held-treasuries-outstanding">Average Maturity of Privately Held Treasuries Outstanding</a></li>
+<li><a href="#u.s.-maturity-weighted-debt-to-gdp">U.S. Maturity Weighted Debt-to-GDP</a></li>
+<li><a href="#federal-agency-debt-issuance-to-gdp">Federal Agency Debt Issuance-to-GDP</a></li>
+<li><a href="#federal-agency-debt-outstanding-to-gdp">Federal Agency Debt Outstanding-to-GDP</a></li>
+</ul></li>
+<li><a href="#agency-mbs">Agency MBS</a>
+<ul>
+<li><a href="#single-family-agency-mbs-issuance-to-gdp">Single-Family Agency MBS Issuance-to-GDP</a></li>
+<li><a href="#single-family-fixed-rate-agency-mbs-conditional-prepayment-rates">Single-Family Fixed-rate Agency MBS Conditional Prepayment Rates</a></li>
+<li><a href="#agency-multifamily-issuance">Agency Multifamily Issuance</a></li>
+</ul></li>
+<li><a href="#mortgage-trends">Mortgage Trends</a>
+<ul>
+<li><a href="#mortgage-originations">Mortgage Originations</a></li>
+<li><a href="#agency-mbs-issuance-and-mortgage-originations-to-gdp">Agency MBS Issuance and Mortgage Originations-to-GDP</a></li>
+<li><a href="#agency-mbs-issuance-and-mortgage-originations-to-gdp-1">Agency MBS Issuance and Mortgage Originations-to-GDP</a></li>
+<li><a href="#m-change-in-10-yr-treasury-yield-and-mortgage-originations-to-gdp">12M change in 10-yr Treasury Yield and Mortgage Originations-to-GDP</a></li>
+<li><a href="#loan-shares-used-in-fhfa-hpi-valuation-data">Loan Shares Used In FHFA HPI Valuation Data</a></li>
+<li><a href="#primary-dealer-net-positions-in-mbs-adjusted-for-mortgage-duration-and-treasury-10-yr-risk-premium">Primary Dealer Net Positions in MBS adjusted for Mortgage Duration and Treasury 10-yr Risk Premium</a></li>
+<li><a href="#primary-dealer-net-positions-in-mbs-adjusted-for-mortgage-duration-and-agency-mbs-issuance-to-gdp">Primary Dealer Net Positions in MBS adjusted for Mortgage Duration and Agency MBS Issuance-to-GDP</a></li>
+<li><a href="#mortgage-refinance-index">Mortgage Refinance Index</a></li>
+<li><a href="#mortgage-refinance-index-and-10-yr-risk-premium">Mortgage Refinance Index and 10-yr Risk Premium</a></li>
+<li><a href="#home-equity-withdrawal-to-retail-sales">Home Equity Withdrawal-to-Retail Sales</a></li>
+<li><a href="#home-equity-withdrawal">Home Equity Withdrawal</a></li>
+<li><a href="#cash-out-share-of-refinancings">Cash Out Share of Refinancings</a></li>
+<li><a href="#median-age-of-refinanced-mortgage">Median Age of Refinanced Mortgage</a></li>
+<li><a href="#median-ratio-of-old-to-new-mortgage-rate-at-time-of-refinancing">Median Ratio of Old to New Mortgage Rate At Time of Refinancing</a></li>
+<li><a href="#median-appreciation-on-exisiting-property-at-time-of-refinancing">Median Appreciation on Exisiting Property At Time of Refinancing</a></li>
+</ul></li>
+<li><a href="#fha-and-va-activity">FHA and VA Activity</a>
+<ul>
+<li><a href="#fha-va-mortgage-insurance-volume">FHA &amp; VA Mortgage Insurance Volume</a></li>
+<li><a href="#government-mortgage-activity">Government Mortgage Activity</a></li>
+<li><a href="#fha-share-of-mortgage-originations">FHA Share of Mortgage Originations</a></li>
+</ul></li>
+<li><a href="#fannie-mae-monthly-volume-summary">Fannie Mae Monthly Volume Summary</a>
+<ul>
+<li><a href="#fnma-guarantee-book-of-business">FNMA: Guarantee Book of Business</a></li>
+<li><a href="#fnma-retained-mortgage-portfolio-activity">FNMA: Retained Mortgage Portfolio Activity</a></li>
+<li><a href="#fnma-retained-mortgage-portfolio-composition">FNMA: Retained Mortgage Portfolio Composition</a></li>
+<li><a href="#fnma-mbs">FNMA MBS</a></li>
+<li><a href="#fnma-book-of-business">FNMA Book of Business</a></li>
+<li><a href="#fnma-retained-mortgage-portfolio-activity-1">FNMA Retained Mortgage Portfolio Activity</a></li>
+<li><a href="#fnma-long-term-debt-activity">FNMA Long-term Debt Activity</a></li>
+<li><a href="#fnma-debt-outstanding">FNMA Debt Outstanding</a></li>
+</ul></li>
+<li><a href="#freddie-mac-monthly-volume-summary">Freddie Mac Monthly Volume Summary</a>
+<ul>
+<li><a href="#fhlmc-total-mortgage-portfolio">FHLMC Total Mortgage Portfolio</a></li>
+<li><a href="#fhlmc-total-mortgage-portfolio-rates">FHLMC Total Mortgage Portfolio Rates</a></li>
+<li><a href="#fhlmc-mortgage-related-securities">FHLMC Mortgage Related Securities</a></li>
+<li><a href="#fhlmc-mortage-related-investments-portfolio">FHLMC Mortage Related Investments Portfolio</a></li>
+<li><a href="#fhlmc-mortage-related-investments-portfolio-rates">FHLMC Mortage Related Investments Portfolio Rates</a></li>
+<li><a href="#fhlmc-portfolio-composition">FHLMC Portfolio Composition</a></li>
+<li><a href="#fhlmc-mortgage-related-securities-outstanding-and-total-mortgage-holdings">FHLMC Mortgage Related Securities Outstanding and Total Mortgage Holdings</a></li>
+<li><a href="#secondary-market-transactions-in-mortgages">Secondary Market Transactions in Mortgages</a></li>
+<li><a href="#freddie-mac-long-term-debt-activity">Freddie Mac Long-term Debt Activity</a></li>
+<li><a href="#freddie-mac-debt-outstanding">Freddie Mac Debt Outstanding</a></li>
+</ul></li>
+<li><a href="#fnma-multifamily-mortgages">FNMA Multifamily Mortgages</a>
+<ul>
+<li><a href="#fnma-multifamily-mbs-issuances-and-loan-purchases">FNMA Multifamily MBS Issuances and Loan Purchases</a></li>
+</ul></li>
+<li><a href="#gnma-issuance">GNMA Issuance</a>
+<ul>
+<li><a href="#gnma-multifamily-pool-issuance">GNMA Multifamily Pool Issuance</a></li>
+</ul></li>
+<li><a href="#fha-multifamily-mortgages">FHA Multifamily Mortgages</a>
+<ul>
+<li><a href="#fha-multifamily-gross-endorsements-to-gdp">FHA Multifamily Gross Endorsements-to-GDP</a></li>
+<li><a href="#fha-multifamily-real-gross-endorsements">FHA Multifamily Real Gross Endorsements</a></li>
+<li><a href="#fha-gross-endorsements-to-gdp">FHA Gross Endorsements-to-GDP</a></li>
+<li><a href="#fha-insured-40-yr-multifamily-interest-rates">FHA Insured 40-yr Multifamily Interest Rates</a></li>
+<li><a href="#fha-multifamily-mortgage-rate-and-single-family-mortgage-rate">FHA Multifamily Mortgage Rate and Single Family Mortgage Rate</a></li>
+<li><a href="#fha-multifamily-mortgage-refi-incentive">FHA Multifamily Mortgage Refi Incentive</a></li>
+<li><a href="#real-value-of-fha-insured-debt-per-apartment-unit">Real value of FHA Insured Debt per Apartment Unit</a></li>
+<li><a href="#fha-multifamily-mortgage-debt-insured-to-gdp">FHA Multifamily Mortgage Debt Insured-to-GDP</a></li>
+<li><a href="#fha-multifamily-insured-prepayment-rate">FHA Multifamily Insured Prepayment Rate</a></li>
+<li><a href="#fha-multifamily-exit-rates">FHA Multifamily Exit Rates</a></li>
+<li><a href="#entry-rate-less-exit-rate-into-fha-insurance">Entry Rate less Exit Rate into FHA insurance</a></li>
+</ul></li>
+<li><a href="#corporations">Corporations</a>
+<ul>
+<li><a href="#corporate-issuance-to-gdp">Corporate Issuance-to-GDP</a></li>
+<li><a href="#corporate-issuance-to-gdp-1990-">Corporate Issuance-to-GDP: 1990-</a></li>
+<li><a href="#u.s.-corporate-equity-issuance-to-sp500">U.S. Corporate Equity Issuance-to-SP500</a></li>
+<li><a href="#domestic-non-financial-corporate-equity-issuance">Domestic Non-financial Corporate Equity Issuance</a></li>
+<li><a href="#net-equity-issuances-to-gdp">Net Equity Issuances-to-GDP</a></li>
+<li><a href="#gross-equity-issuance-to-gdp">Gross Equity Issuance-to-GDP</a></li>
+<li><a href="#equity-retirement-repurchases-and-mergers-and-acquisitions-to-gdp">Equity Retirement: Repurchases and Mergers and Acquisitions-to-GDP</a></li>
+<li><a href="#corporate-bonds-outstanding-to-gdp">Corporate Bonds Outstanding-to-GDP</a></li>
+<li><a href="#m-ch-in-equity-issuance-to-gdp-and-stock-prices-part-1">12M ch in Equity Issuance-to-GDP and Stock Prices (Part 1)</a></li>
+<li><a href="#m-ch-in-equity-issuance-to-gdp-and-stock-prices-part-2">12M ch in Equity Issuance-to-GDP and Stock Prices (Part 2)</a></li>
+<li><a href="#mergers-and-acquisitions">Mergers and Acquisitions</a></li>
+<li><a href="#number-of-mergers-and-acquisitions-deflated-by-cpi">Number of Mergers and Acquisitions Deflated by CPI</a></li>
+<li><a href="#value-of-mergers-and-acquisitions">Value of Mergers and Acquisitions</a></li>
+<li><a href="#value-of-mergers-and-acquisitions-to-gdp">Value of Mergers and Acquisitions-to-GDP</a></li>
+<li><a href="#sp500-to-retail-and-business-sales-ratios">SP500-to-Retail and Business Sales Ratios</a></li>
+<li><a href="#sp500-to-nominal-gdp-ratio">SP500-to-Nominal GDP Ratio</a></li>
+<li><a href="#real-sp-500">Real S&amp;P 500</a></li>
+<li><a href="#real-nyse-trading-volume">Real NYSE Trading Volume</a></li>
+<li><a href="#real-equity-margin-debt">Real Equity Margin Debt</a></li>
+<li><a href="#equity-margin-debt-to-gdp">Equity Margin Debt-to-GDP</a></li>
+<li><a href="#baa-10y-spread-and-economic-policy-uncertainty">BAA-10Y Spread and Economic Policy Uncertainty</a></li>
+<li><a href="#baa-10y-spread-and-baml-hy-oas">BAA-10Y Spread and BAML HY OAS</a></li>
+<li><a href="#excess-corporate-bond-premium">Excess Corporate Bond Premium</a></li>
+<li><a href="#commercial-paper-outstanding-to-gdp">Commercial Paper Outstanding-to-GDP</a></li>
+</ul></li>
+<li><a href="#u.s.-equity-real-industry-price-indexes">U.S. Equity Real Industry Price Indexes</a>
+<ul>
+<li><a href="#consumer-goods-energy-and-manufacturing">Consumer Goods, Energy, and Manufacturing</a></li>
+<li><a href="#energy-stock-prices-to-fuel-prices">Energy Stock Prices-to-Fuel Prices</a></li>
+<li><a href="#hi-tech-telecom-retail-and-health">Hi-Tech, Telecom, Retail and Health</a></li>
+<li><a href="#retail-stock-prices-to-retail-sales">Retail Stock Prices-to-Retail Sales</a></li>
+<li><a href="#agriculture-and-alcohol">Agriculture and Alcohol</a></li>
+<li><a href="#tobacco-recreation-entertainment-and-publishing">Tobacco, Recreation, Entertainment and Publishing</a></li>
+<li><a href="#consumer-goods-and-apparel">Consumer Goods and Apparel</a></li>
+<li><a href="#medical">Medical</a></li>
+<li><a href="#chemicals-rubber-and-plastics-textiles-and-construction-materials">Chemicals, Rubber and Plastics, Textiles, and Construction Materials</a></li>
+<li><a href="#construction-steel-works-fabricated-products-and-machinery">Construction, Steel Works, Fabricated Products, and Machinery</a></li>
+<li><a href="#autos-aircraft-shipbuilding-and-railroad-equipment-and-defense">Autos, Aircraft, Shipbuilding and Railroad Equipment, and Defense</a></li>
+<li><a href="#metals-and-energy">Metals and Energy</a></li>
+<li><a href="#utilities-communication-personal-and-business-services">Utilities, Communication, Personal and Business Services</a></li>
+<li><a href="#computers-software-electronic-equipment-and-measuring-and-control-equipment">Computers, Software, Electronic Equipment, and Measuring and Control Equipment</a></li>
+<li><a href="#business-supplies-shipping-containers-and-transportation">Business supplies, Shipping Containers, and Transportation</a></li>
+<li><a href="#wholesale-retail-hospitality-and-other">Wholesale, Retail, Hospitality and Other</a></li>
+<li><a href="#wholesale-and-retail-business-indexes-to-sales">Wholesale and Retail Business Indexes-to-Sales</a></li>
+<li><a href="#wholesale-stock-prices-to-wholesalers-sales">Wholesale Stock Prices-to-Wholesalers Sales</a></li>
+<li><a href="#banking-insurance-real-estate-and-trading">Banking, Insurance, Real Estate, and Trading</a></li>
+</ul></li>
+<li><a href="#state-and-local-government">State and Local Government</a>
+<ul>
+<li><a href="#state-local-government-bond-issuance-to-gdp">State &amp; Local Government Bond Issuance-to-GDP</a></li>
+<li><a href="#refunding-bond-issuance-to-gdp-and-change-in-muni-yields">Refunding Bond Issuance-to-GDP and Change in Muni Yields</a></li>
+<li><a href="#muni-issuance-to-gdp-go-and-revenue-bonds">Muni Issuance-to-GDP: GO and Revenue Bonds</a></li>
+<li><a href="#muni-sector-issuance-to-gdp">Muni Sector Issuance-to-GDP</a></li>
+</ul></li>
+<li><a href="#primary-dealer-net-positions">Primary Dealer Net Positions</a>
+<ul>
+<li><a href="#primary-dealer-net-positions-in-treasury-securities">Primary Dealer Net Positions in Treasury Securities</a></li>
+<li><a href="#net-positions-in-treasury-securities-with-less-than-one-year-to-maturity">Net Positions in Treasury Securities with less than one-year to maturity</a></li>
+<li><a href="#net-positions-in-treasury-securities-with-greater-than-one-year-till-maturity">Net Positions in Treasury Securities with greater than one-year till maturity</a></li>
+<li><a href="#net-duration-of-treasury-positions">Net Duration of Treasury Positions</a></li>
+<li><a href="#net-positions-in-treasury-securities-7-yr">Net Positions in Treasury Securities &gt; 7-yr</a></li>
+<li><a href="#net-positions-in-federal-agency-debt">Net Positions in Federal Agency Debt</a></li>
+<li><a href="#primary-dealer-net-treasury-positions-and-the-baa-10yr-spread">Primary Dealer Net Treasury Positions and The BAA-10yr Spread</a></li>
+</ul></li>
+<li><a href="#net-repo">Net Repo</a>
+<ul>
+<li><a href="#net-repo-1">Net Repo</a></li>
+<li><a href="#net-on-repo">Net O/N Repo</a></li>
+<li><a href="#net-term-repo">Net Term Repo</a></li>
+</ul></li>
+<li><a href="#transactions">Transactions</a>
+<ul>
+<li><a href="#primary-dealer-transactions">Primary Dealer Transactions</a></li>
+<li><a href="#agency-debt-and-mbs-transactions">Agency Debt and MBS Transactions</a></li>
+<li><a href="#treasury-transactions">Treasury Transactions</a></li>
+</ul></li>
+<li><a href="#fed-holdings-of-treasuries">Fed Holdings of Treasuries</a>
+<ul>
+<li><a href="#holdings-of-treasuries">Holdings of Treasuries</a></li>
+<li><a href="#holdings-as-a-fraction-outstanding">Holdings as a fraction outstanding</a></li>
+<li><a href="#holding-of-treasuries-greater-than-10-yrs">Holding of Treasuries greater than 10-yrs</a></li>
+<li><a href="#net-duration-of-the-federal-reserves-treasury-holdings">Net Duration of The Federal Reserves Treasury Holdings</a></li>
+<li><a href="#maturity-of-federal-reserve-treasury-holdings-to-gdp">Maturity of Federal Reserve Treasury Holdings-to-GDP</a></li>
+</ul></li>
+<li><a href="#bank-assets">Bank Assets</a>
+<ul>
+<li><a href="#bank-holdings-of-treasury-agency-securities">Bank Holdings of Treasury &amp; Agency Securities</a></li>
+<li><a href="#large-domestic-bank-holdings-of-agency-mbs-and-treasuries">Large Domestic Bank Holdings of Agency MBS and Treasuries</a></li>
+</ul></li>
+<li><a href="#u.s.-interest-rates">U.S. Interest Rates</a>
+<ul>
+<li><a href="#term-structure">Term Structure</a></li>
+<li><a href="#short-term-interest-rates">Short-term Interest Rates</a></li>
+<li><a href="#long-term-interest-rates">Long-term Interest Rates</a></li>
+<li><a href="#aaa-corporate-bond-yield-and-us-treasury-bond-yield">AAA Corporate Bond Yield and US Treasury Bond Yield</a></li>
+<li><a href="#long-term-interest-rates-1999-">Long-term Interest Rates: 1999-</a></li>
+</ul></li>
+<li><a href="#expectations">Expectations</a>
+<ul>
+<li><a href="#short-term-inflation-expectations">Short-term Inflation Expectations</a></li>
+<li><a href="#short-term-inflation-expectations-2000-">Short-term Inflation Expectations: 2000-</a></li>
+<li><a href="#long-term-inflation-expectations">Long-term Inflation Expectations</a></li>
+<li><a href="#long-term-inflation-expectations-2000-">Long-term Inflation Expectations: 2000-</a></li>
+<li><a href="#term-structure-of-inflation-expectations">Term Structure of Inflation Expectations</a></li>
+<li><a href="#nominal-gdp-expectations">Nominal GDP Expectations</a></li>
+<li><a href="#nominal-gdp-expectations-2000-">:Nominal GDP Expectations: 2000-</a></li>
+<li><a href="#ism-and-short-term-less-long-term-expected-ngdp-growth">ISM and Short-term Less Long-term Expected NGDP Growth</a></li>
+<li><a href="#real-gdp-expectations">Real GDP Expectations</a></li>
+<li><a href="#real-gdp-expectations-2000-">Real GDP Expectations: 2000-</a></li>
+<li><a href="#ism-and-short-term-less-long-term-expected-rgdp-growth">ISM and Short-term Less Long-term Expected RGDP Growth</a></li>
+<li><a href="#real-gdp-inter-quartile-range">Real GDP Inter-Quartile Range</a></li>
+<li><a href="#real-gdp-inter-quartile-range-2000-">Real GDP Inter-Quartile Range: 2000-</a></li>
+<li><a href="#nominal-gdp-inter-quartile-range">Nominal GDP Inter-Quartile Range</a></li>
+<li><a href="#nominal-gdp-inter-quartile-range-2000-">Nominal GDP Inter-Quartile Range: 2000-</a></li>
+<li><a href="#nominal-gdp-inter-quartile-range-and-credit-spreads">Nominal GDP Inter-Quartile Range and Credit Spreads</a></li>
+<li><a href="#inflation-inter-quartile-range">Inflation Inter-Quartile Range</a></li>
+<li><a href="#inflation-inter-quartile-range-2000-">Inflation Inter-Quartile Range: 2000-</a></li>
+<li><a href="#cpi-inter-quartile-range-and-baa-aaa-spread">CPI Inter-Quartile Range and BAA-AAA Spread</a></li>
+</ul></li>
+<li><a href="#u.s.-expected-returns">U.S. Expected Returns</a>
+<ul>
+<li><a href="#treasury-price-index">Treasury Price Index</a></li>
+<li><a href="#annual-treasury-returns">Annual Treasury Returns</a></li>
+<li><a href="#one-yr-treasury-excess-returns">One-yr Treasury Excess Returns</a></li>
+<li><a href="#average-bank-income-gap">Average Bank Income Gap</a></li>
+<li><a href="#level-of-treasury-yields-and-fundamental-de-trenders-part-1">Level of Treasury Yields and Fundamental De-trenders (Part 1)</a></li>
+<li><a href="#level-of-treasury-yields-and-fundamental-de-trenders-1990-">Level of Treasury Yields and Fundamental De-trenders: 1990-</a></li>
+<li><a href="#average-expected-and-realized-treasury-return-part-1">Average Expected and Realized Treasury Return (Part 1)</a></li>
+<li><a href="#average-expected-and-realized-treasury-return-part-2">Average Expected and Realized Treasury Return (Part 2)</a></li>
+<li><a href="#regression-based-expected-excess-treasury-returns-part-1">Regression Based Expected Excess Treasury Returns (Part 1)</a></li>
+<li><a href="#regression-based-expected-excess-treasury-returns-part-2">Regression Based Expected Excess Treasury Returns (Part 2)</a></li>
+<li><a href="#yr-treasury-yield-decomposition">10-yr Treasury Yield Decomposition</a></li>
+<li><a href="#yr-treasury-yield-decomposition-1">2-yr Treasury Yield Decomposition</a></li>
+<li><a href="#yr-treasury-yield-decomposition-2">5-yr Treasury Yield Decomposition</a></li>
+<li><a href="#return-on-break-even-inflation-actual-vs.-expected">Return on Break-even Inflation: Actual vs. Expected</a></li>
+<li><a href="#return-on-real-yields-actual-vs.-expected">Return on Real yields: Actual vs. Expected</a></li>
+<li><a href="#ism-and-treasury-10-yr-risk-premium-1992-">ISM and Treasury 10-yr Risk Premium: 1992-</a></li>
+<li><a href="#new-issue---seasoned-spreads">New Issue - Seasoned Spreads</a></li>
+<li><a href="#new-issue---seasoned-spreads-and-de-trended-short-term-inflation-expectations">New Issue - Seasoned Spreads and De-trended Short-term Inflation Expectations</a></li>
+</ul></li>
+<li><a href="#economic-data">Economic Data</a>
+<ul>
+<li><a href="#real-gdp-per-capita">Real GDP per capita</a></li>
+<li><a href="#decomposition-of-10-yr-annualized-real-gdp-per-capita">Decomposition of 10-yr Annualized Real GDP per capita</a></li>
+<li><a href="#decomposition-of-10-yr-annualized-real-gdp-per-capita-1990-">Decomposition of 10-yr Annualized Real GDP per capita: 1990-</a></li>
+<li><a href="#real-personal-income-per-capita">Real Personal Income per capita</a></li>
+<li><a href="#real-personal-income-ex-transfer-receipts-per-capita">Real Personal Income Ex Transfer Receipts per capita</a></li>
+<li><a href="#real-personal-income-ex-transfer-receipts-per-capita-1990-to-the-present">Real Personal Income Ex Transfer Receipts per capita: 1990 to the present</a></li>
+<li><a href="#real-personal-income-per-capita-1">Real Personal Income per capita</a></li>
+<li><a href="#sources-of-real-personal-income-per-capita">Sources of Real Personal Income per capita</a></li>
+<li><a href="#real-business-sales-per-capita">Real Business Sales per capita</a></li>
+<li><a href="#business-inventories-to-sales-ratio">Business Inventories-to-Sales Ratio</a></li>
+<li><a href="#real-retail-sales-per-capita">Real Retail Sales per capita</a></li>
+<li><a href="#real-retail-sales-per-capita-1990-to-the-present">Real Retail Sales per capita: 1990 to the present</a></li>
+<li><a href="#real-new-orders-for-durable-goods-per-capita">Real New Orders for Durable Goods per capita</a></li>
+<li><a href="#real-new-orders-for-durable-goods-per-capita-1990-to-the-present">Real New Orders for Durable Goods per capita: 1990 to the present</a></li>
+<li><a href="#consumer-credit-to-gdp">Consumer Credit-to-GDP</a></li>
+<li><a href="#inflation-and-federal-funds-rate">Inflation and Federal Funds Rate</a></li>
+<li><a href="#inflation-and-federal-funds-rate-1990-to-the-present">Inflation and Federal Funds Rate: 1990 to the present</a></li>
+</ul></li>
+<li><a href="#labor-markets">Labor Markets</a>
+<ul>
+<li><a href="#unemployment-rate">Unemployment Rate</a></li>
+<li><a href="#job-finding-and-quits-rate">Job-finding and Quits Rate</a></li>
+<li><a href="#quits-rate">Quits Rate</a></li>
+<li><a href="#labor-demand-and-wage-growth-1909---1949">Labor Demand and Wage Growth: 1909 - 1949</a></li>
+<li><a href="#labor-demand-and-wage-growth-1950---1986">Labor Demand and Wage Growth: 1950 - 1986</a></li>
+<li><a href="#labor-demand-and-wage-growth-1984-">Labor Demand and Wage Growth: 1984-</a></li>
+<li><a href="#labor-flow-rates">Labor Flow Rates</a></li>
+<li><a href="#job-openings">Job Openings</a></li>
+<li><a href="#log-job-openings-to-unemployment-ratio">Log Job Openings-to-Unemployment Ratio</a></li>
+<li><a href="#job-openings-to-unemployment-ratio">Job Openings-to-Unemployment Ratio</a></li>
+<li><a href="#labor-demand-quit-rate-and-vacancy-unemployment-ratio">Labor Demand: Quit Rate and Vacancy-Unemployment Ratio</a></li>
+<li><a href="#ism-new-orders-and-the-job-finding-rate">ISM New Orders and The Job-finding Rate</a></li>
+<li><a href="#the-unemployment-rate-gap">The Unemployment Rate Gap</a></li>
+<li><a href="#the-unemployment-rate-gap-1993-">The Unemployment Rate Gap: 1993-</a></li>
+<li><a href="#employment-to-population-ratio">Employment-to-Population Ratio</a></li>
+<li><a href="#employment-to-population-ratio-gap">Employment-to-Population Ratio Gap</a></li>
+<li><a href="#labor-force-participation-rate-gap">Labor-Force Participation Rate Gap</a></li>
+<li><a href="#labor-force-participation-rate-flows-vs.-stocks">Labor-Force Participation Rate: Flows vs. Stocks</a></li>
+<li><a href="#initial-claims-for-unemployment-insurance">Initial Claims for Unemployment Insurance</a></li>
+<li><a href="#real-labor-income">Real Labor Income</a></li>
+<li><a href="#real-labor-income-yoy">Real Labor Income (Yoy)</a></li>
+</ul></li>
+<li><a href="#real-estate">Real Estate</a>
+<ul>
+<li><a href="#real-home-price-and-commercial-real-estate-price-index">Real Home Price and Commercial Real Estate Price Index</a></li>
+<li><a href="#real-multifamily-price-indexes">Real Multifamily Price Indexes</a></li>
+<li><a href="#construction-to-gdp">Construction-to-GDP</a></li>
+<li><a href="#real-per-capita-construction">Real Per Capita Construction</a></li>
+<li><a href="#real-private-and-public-construction-per-capita">Real Private and Public Construction Per Capita</a></li>
+<li><a href="#real-construction-per-capita">Real Construction Per Capita</a></li>
+<li><a href="#real-residential-construction-per-capita-and-real-home-prices">Real Residential Construction Per Capita and Real Home Prices</a></li>
+<li><a href="#real-highway-and-street-construction-per-capita">Real Highway and Street Construction Per Capita</a></li>
+<li><a href="#real-office-construction-per-capita">Real Office Construction Per Capita</a></li>
+<li><a href="#u.s.-new-privately-owned-housing-units-summary">U.S. New Privately-Owned Housing Units: Summary</a></li>
+<li><a href="#new-privately-owned-housing-single-family-units-summary">New Privately-Owned Housing Single Family Units: Summary</a></li>
+<li><a href="#new-privately-owned-housing-multifamily-units-summary">New Privately-Owned Housing Multifamily Units: Summary</a></li>
+<li><a href="#new-privately-owned-housing-units-under-construction">New Privately-Owned Housing Units Under Construction</a></li>
+<li><a href="#monthly-supply-of-houses-in-the-united-states">Monthly Supply of Houses in the United States</a></li>
+<li><a href="#the-expected-return-on-new-single-family-housing-and-real-home-prices">The Expected Return on New Single-family Housing and Real Home Prices</a></li>
+</ul></li>
+<li><a href="#reits">REITS</a>
+<ul>
+<li><a href="#dividend-yield">Dividend Yield</a></li>
+<li><a href="#real-dividend-yields">Real Dividend Yields</a></li>
+<li><a href="#real-return-index">Real Return Index</a></li>
+<li><a href="#income-return">Income Return</a></li>
+<li><a href="#price-return">Price Return</a></li>
+</ul></li>
+<li><a href="#transportation">Transportation</a>
+<ul>
+<li><a href="#public-transit-ridership">Public Transit Ridership</a></li>
+<li><a href="#transportation-summary">Transportation Summary</a></li>
+<li><a href="#transportation-quantity-summary">Transportation Quantity Summary</a></li>
+<li><a href="#transportation-summary-nominal-expenditures">Transportation Summary: Nominal Expenditures</a></li>
+<li><a href="#transportation-summary-real-personal-expenditures">Transportation Summary: Real Personal Expenditures</a></li>
+<li><a href="#transportation-summary-real-price-indexes">Transportation Summary: Real Price Indexes</a></li>
+<li><a href="#air-passenger-revenue-miles">Air Passenger Revenue Miles</a></li>
+<li><a href="#air-freight-ton-miles">Air Freight Ton-Miles</a></li>
+<li><a href="#air-carrier-revenue-ton-miles">Air Carrier Revenue Ton-Miles</a></li>
+<li><a href="#total-air-revenue-ton-miles">Total Air Revenue Ton-Miles</a></li>
+<li><a href="#international-travel">International Travel</a></li>
+<li><a href="#international-travel-quantity-indexes">International Travel: Quantity Indexes</a></li>
+<li><a href="#passenger-fares-for-foreign-travel-quantity-index">Passenger Fares for Foreign Travel: Quantity Index</a></li>
+<li><a href="#u.s.-hotel-occupancy">U.S. Hotel Occupancy</a></li>
+<li><a href="#hotels-and-motels-quantity-indexes">Hotels and Motels: Quantity Indexes</a></li>
+<li><a href="#u.s.-restaurant-sales">U.S. Restaurant Sales</a></li>
+<li><a href="#u.s.-national-park-visitors">U.S. National Park Visitors</a></li>
+<li><a href="#u.s.-national-park-visitors-per-capita---logs">U.S. National Park Visitors Per Capita - logs</a></li>
+<li><a href="#u.s.-national-park-visitors-per-capita">U.S. National Park Visitors Per Capita</a></li>
+<li><a href="#u.s.-real-hotel-construction-revenue-and-stock-prices">U.S. Real Hotel Construction, Revenue, and Stock Prices</a></li>
+</ul></li>
+<li><a href="#autos">Autos</a>
+<ul>
+<li><a href="#u.s.-passenger-auto-summary">U.S. Passenger Auto Summary</a></li>
+<li><a href="#u.s.-passenger-auto-trade">U.S. Passenger Auto Trade</a></li>
+<li><a href="#u.s.-passenger-auto-inventory-change">U.S. Passenger Auto Inventory Change</a></li>
+<li><a href="#u.s.-passenger-auto-inventories">U.S. Passenger Auto Inventories</a></li>
+<li><a href="#u.s.-passenger-auto-inventory-to-sales-ratio">U.S. Passenger Auto Inventory-to-Sales Ratio</a></li>
+<li><a href="#passenger-autos-average-prices">Passenger Autos: Average Prices</a></li>
+<li><a href="#u.s.-trade-in-motor-vehicles-for-the-transport-of-persons">U.S. Trade In Motor Vehicles For The Transport of Persons</a></li>
+<li><a href="#u.s.-trade-in-motor-vehicles-for-the-transport-of-goods">U.S. Trade In Motor Vehicles For The Transport of Goods</a></li>
+<li><a href="#total-vehicle-sales">Total Vehicle Sales</a></li>
+<li><a href="#total-vehicle-sales-per-capita">Total Vehicle Sales per capita</a></li>
+<li><a href="#passenger-and-truck-sales-per-capita">Passenger and Truck Sales per capita</a></li>
+<li><a href="#u.s.-motor-vehicle-production">U.S. Motor Vehicle Production</a></li>
+<li><a href="#motor-vehicle-production-per-1000-residents">Motor Vehicle Production per 1000 Residents</a></li>
+<li><a href="#auto-credit-to-gdp">Auto Credit-to-GDP</a></li>
+<li><a href="#u.s.-auto-and-truck-equities-valuation-ratios">U.S. Auto and Truck Equities Valuation Ratios</a></li>
+</ul></li>
+<li><a href="#commodity-prices"><span class="toc-section-number">0.1</span> Commodity Prices</a>
+<ul>
+<li><a href="#core-inflation-factor">Core Inflation Factor</a></li>
+<li><a href="#baa-10yr-spread-and-ism-prices-index">BAA-10yr Spread and ISM Prices Index</a></li>
+<li><a href="#real-copper-price">Real Copper Price</a></li>
+<li><a href="#real-wheat-price">Real Wheat Price</a></li>
+<li><a href="#real-farm-product-prices">Real Farm Product Prices</a></li>
+<li><a href="#real-fuel-prices">Real Fuel Prices</a></li>
+<li><a href="#real-scrap-steel-and-iron-price-index">Real Scrap Steel and Iron Price Index</a></li>
+<li><a href="#real-oil-price">Real Oil Price</a></li>
+<li><a href="#real-textile-price-index">Real Textile Price Index</a></li>
+<li><a href="#real-lumber-price-index">Real Lumber Price Index</a></li>
+<li><a href="#real-meat-price-index">Real Meat Price Index</a></li>
+</ul></li>
+<li><a href="#meat">Meat</a>
+<ul>
+<li><a href="#u.s.-red-meat-summary">U.S. Red-Meat Summary</a></li>
+<li><a href="#u.s.-beef-veal-summary">U.S. Beef &amp; Veal Summary</a></li>
+<li><a href="#u.s.-pork-summary">U.S. Pork Summary</a></li>
+<li><a href="#u.s.-beef-veal-and-pork-consumption">U.S. Beef &amp; Veal and Pork Consumption</a></li>
+<li><a href="#u.s.-red-meat-production">U.S. Red Meat Production</a></li>
+<li><a href="#u.s.-red-meat-stocks">U.S. Red Meat Stocks</a></li>
+<li><a href="#u.s.-meat-trade">U.S. Meat Trade</a></li>
+</ul></li>
+<li><a href="#copper">Copper</a>
+<ul>
+<li><a href="#u.s.-refined-copper-summary">U.S. Refined Copper Summary</a></li>
+<li><a href="#u.s.-real-copper-price-vs.-consumption-to-stocks-ratio">U.S. Real Copper Price vs. Consumption-to-Stocks Ratio</a></li>
+<li><a href="#u.s.-copper-production">U.S. Copper Production</a></li>
+<li><a href="#u.s.-refined-copper-stocks-and-consumption">U.S. Refined Copper Stocks and Consumption</a></li>
+</ul></li>
+<li><a href="#iron-and-steel">Iron and Steel</a>
+<ul>
+<li><a href="#u.s.-iron-and-steel-scrap-summary">U.S. Iron and Steel Scrap Summary</a></li>
+<li><a href="#u.s.-real-iron-and-steel-scrap-price-vs.-consumption-to-stocks-ratio">U.S. Real Iron and Steel Scrap Price vs. Consumption-to-Stocks Ratio</a></li>
+<li><a href="#u.s.-pig-iron-summary">U.S. Pig Iron Summary</a></li>
+<li><a href="#u.s.-raw-steel-production">U.S. Raw Steel Production</a></li>
+</ul></li>
+<li><a href="#energy">Energy</a>
+<ul>
+<li><a href="#u.s.-electricity-revenue-to-gdp">U.S. Electricity Revenue-to-GDP</a></li>
+<li><a href="#electricity-kw-hour">Electricity: $kw hour</a></li>
+<li><a href="#electricity-net-generation-of-the-electric-power-sector">Electricity Net Generation of The Electric Power Sector</a></li>
+<li><a href="#electricity-real-revenue-per-capita">Electricity: Real Revenue per capita</a></li>
+<li><a href="#u.s.-refinery-operations">U.S. Refinery Operations</a></li>
+<li><a href="#u.s.-domestic-crude-oil-consumption-to-domestic-stocks-and-the-real-oil-price">U.S. Domestic Crude Oil Consumption-to-Domestic Stocks and The Real Oil Price</a></li>
+<li><a href="#u.s.-retail-gasoline-station-sales-to-personal-income">U.S. Retail Gasoline Station Sales-to-Personal Income</a></li>
+<li><a href="#u.s.-petroleum-and-products-summary">U.S. Petroleum and Products Summary</a></li>
+<li><a href="#u.s.-real-gasoline-distillate-and-residual-fuel-oil-prices">U.S. Real Gasoline, Distillate and Residual Fuel Oil Prices</a></li>
+<li><a href="#u.s.-petroleum-and-products-production">U.S. Petroleum and Products Production</a></li>
+<li><a href="#u.s.-petroleum-and-product-consumption-per-capita">U.S. Petroleum and Product Consumption per capita</a></li>
+<li><a href="#u.s.-petroleum-and-product-stocks-per-capita">U.S. Petroleum and Product Stocks per capita</a></li>
+<li><a href="#u.s.-coal-summary">U.S. Coal Summary</a></li>
+<li><a href="#u.s.-coal-trade">U.S. Coal Trade</a></li>
+<li><a href="#u.s.-coal-consumption-and-production">U.S. Coal Consumption and Production</a></li>
+</ul></li>
+<li><a href="#tobacco">Tobacco</a>
+<ul>
+<li><a href="#u.s.-cigarette-summary">U.S. Cigarette Summary</a></li>
+<li><a href="#u.s.-cigarette-summary-imports-exports-and-tax-exempt-removals">U.S. Cigarette Summary: Imports, Exports, and Tax-Exempt Removals</a></li>
+<li><a href="#u.s.-small-cigars-summary">U.S. Small Cigars Summary</a></li>
+<li><a href="#u.s.-small-cigars-summary-imports-exports-and-tax-exempt-removals-for-consumption">U.S. Small Cigars Summary: Imports, Exports, and Tax-Exempt Removals For Consumption</a></li>
+<li><a href="#u.s.-large-cigars-summary">U.S. Large Cigars Summary</a></li>
+<li><a href="#premium-cigar-imports">Premium Cigar Imports</a></li>
+</ul></li>
+<li><a href="#vitality">Vitality</a>
+<ul>
+<li><a href="#u.s.-marriages">U.S. Marriages</a></li>
+<li><a href="#u.s.-marriages-and-housing-starts">U.S. Marriages and Housing Starts</a></li>
+<li><a href="#u.s.-live-birth-and-death-rates">U.S. Live Birth and Death Rates</a></li>
+<li><a href="#u.s.-fertility-rate">U.S. Fertility Rate</a></li>
+</ul></li>
+<li><a href="#world-bond-yields">World Bond Yields</a></li>
+<li><a href="#global-inflation-and-rates">Global Inflation and Rates</a>
+<ul>
+<li><a href="#world-inflation">World Inflation</a></li>
+<li><a href="#europe">Europe</a></li>
+<li><a href="#asia">Asia</a></li>
+<li><a href="#global-long-term-bond-yields-and-inflation">Global Long-term Bond Yields and Inflation</a></li>
+<li><a href="#sweden">Sweden</a></li>
+<li><a href="#france">France</a></li>
+<li><a href="#japan">Japan</a></li>
+<li><a href="#italy">Italy</a></li>
+<li><a href="#germany">Germany</a></li>
+<li><a href="#australia">Australia</a></li>
+<li><a href="#united-kingdom">United Kingdom</a></li>
+<li><a href="#south-africa">South Africa</a></li>
+<li><a href="#norway">Norway</a></li>
+<li><a href="#new-zealand">New Zealand</a></li>
+</ul></li>
+<li><a href="#european-capital-markets">European Capital Markets</a>
+<ul>
+<li><a href="#european-gross-debt-issuance-to-gdp">European Gross Debt Issuance-to-GDP</a></li>
+<li><a href="#german-capital-market-outstandings-to-gdp">German Capital Market Outstandings-to-GDP</a></li>
+<li><a href="#german-capital-market-issuance-to-gdp">German Capital Market Issuance-to-GDP</a></li>
+<li><a href="#german-net-capital-market-issuance-to-gdp">German Net Capital Market Issuance-to-GDP</a></li>
+<li><a href="#german-net-long-term-capital-market-issuance-to-gdp">German Net Long-Term Capital Market Issuance-to-GDP</a></li>
+<li><a href="#france-capital-market-outstandings-to-gdp">France Capital Market Outstandings-to-GDP</a></li>
+<li><a href="#france-capital-market-issuance-to-gdp">France Capital Market Issuance-to-GDP</a></li>
+<li><a href="#france-net-capital-market-issuance-to-gdp">France Net Capital Market Issuance-to-GDP</a></li>
+<li><a href="#france-net-long-term-capital-market-issuance-to-gdp">France Net Long-Term Capital Market Issuance-to-GDP</a></li>
+<li><a href="#italy-capital-market-outstandings-to-gdp">Italy Capital Market Outstandings-to-GDP</a></li>
+<li><a href="#italy-capital-market-issuance-to-gdp">Italy Capital Market Issuance-to-GDP</a></li>
+<li><a href="#italy-net-capital-market-issuance-to-gdp">Italy Net Capital Market Issuance-to-GDP</a></li>
+<li><a href="#italy-net-long-term-capital-market-issuance-to-gdp">Italy Net Long-Term Capital Market Issuance-to-GDP</a></li>
+<li><a href="#spain-capital-market-outstandings-to-gdp">Spain Capital Market Outstandings-to-GDP</a></li>
+<li><a href="#spain-capital-market-issuance-to-gdp">Spain Capital Market Issuance-to-GDP</a></li>
+<li><a href="#spain-net-capital-market-issuance-to-gdp">Spain Net Capital Market Issuance-to-GDP</a></li>
+<li><a href="#europe-capital-market-outstandings-to-gdp">Europe Capital Market Outstandings-to-GDP</a></li>
+<li><a href="#europe-capital-market-issuance-to-gdp">Europe Capital Market Issuance-to-GDP</a></li>
+<li><a href="#europe-net-capital-market-issuance-to-gdp">Europe Net Capital Market Issuance-to-GDP</a></li>
+<li><a href="#europe-net-long-term-capital-market-issuance-to-gdp">Europe Net Long-Term Capital Market Issuance-to-GDP</a></li>
+</ul></li>
+<li><a href="#foreign-transactions">Foreign Transactions</a>
+<ul>
+<li><a href="#total-net-foreign-purchases-1935---1980">Total Net Foreign Purchases: 1935 - 1980</a></li>
+<li><a href="#total-net-foreign-purchases-1980-">Total Net Foreign Purchases: 1980-</a></li>
+<li><a href="#foreign-net-purchases-of-us-long-term-securities">Foreign Net Purchases of US Long-term Securities</a></li>
+<li><a href="#foreign-net-purchases-of-us-treasury-notes-and-bonds">Foreign Net Purchases of US Treasury Notes and Bonds</a></li>
+<li><a href="#foreign-net-purchases-of-us-treasury-notes-and-bonds-1963---1978">Foreign Net Purchases of US Treasury Notes and Bonds: 1963 - 1978</a></li>
+<li><a href="#foreign-net-purchases-of-us-treasury-notes-and-bonds-1979-">Foreign Net Purchases of US Treasury Notes and Bonds: 1979-</a></li>
+<li><a href="#foreign-net-purchases-of-domestic-equities">Foreign Net Purchases of Domestic Equities</a></li>
+<li><a href="#foreign-net-purchases-of-corporate-muni-and-agency-bonds">Foreign Net Purchases of Corporate, Muni and Agency Bonds</a></li>
+<li><a href="#foreign-net-purchases-of-domestic-bonds">Foreign Net Purchases of Domestic Bonds</a></li>
+<li><a href="#u.s.-net-sales-of-foreign-securities-to-foreigners">U.S. Net Sales of Foreign Securities to Foreigners</a></li>
+<li><a href="#foreign-net-purchases-of-treasury-bills">Foreign Net Purchases of Treasury Bills</a></li>
+<li><a href="#short-term-liabilities-of-u.s.-residents-held-by-foreigners">Short-term liabilities of U.S. residents held by foreigners</a></li>
+<li><a href="#oil-exporters-holdings-of-treasuries-and-the-real-price-of-crude-oil">Oil Exporters Holdings of Treasuries and The Real Price of Crude Oil</a></li>
+</ul></li>
+<li><a href="#trade-data">Trade Data</a>
+<ul>
+<li><a href="#u.s.-real-effective-exchange-rate">U.S. Real Effective Exchange Rate</a></li>
+<li><a href="#u.s.-nominal-effective-exchange-rate">U.S. Nominal Effective Exchange Rate</a></li>
+<li><a href="#trade-balance-to-gdp">Trade Balance-to-GDP</a></li>
+<li><a href="#goods-and-services-trade-balance-to-gdp">Goods and Services Trade Balance-to-GDP</a></li>
+<li><a href="#crude-petroleum-non-petroleum-trade-balance-to-gdp">Crude Petroleum &amp; Non-Petroleum Trade Balance-to-GDP</a></li>
+<li><a href="#commodity-trade-balance-to-gdp">Commodity Trade Balance-to-GDP</a></li>
+<li><a href="#iron-and-steel-trade">Iron and Steel Trade</a></li>
+<li><a href="#aluminum-imports-and-exports">Aluminum Imports and Exports</a></li>
+<li><a href="#copper-trade">Copper Trade</a></li>
+<li><a href="#agricultural-commodities-trade">Agricultural Commodities Trade</a></li>
+<li><a href="#u.s.-energy-imports-and-exports">U.S. Energy Imports and Exports</a></li>
+</ul></li>
+<li><a href="#bilateral-trade">Bilateral Trade</a>
+<ul>
+<li><a href="#u.s.-regional-trade-balances-to-gdp">U.S. Regional Trade Balances-to-GDP</a></li>
+<li><a href="#u.s.---asia-trade-balances-to-gdp">U.S. - Asia Trade Balances-to-GDP</a></li>
+<li><a href="#u.s.--european-trade-balances-to-gdp">U.S.- European Trade Balances-to-GDP</a></li>
+<li><a href="#u.s.---south-america-trade-balances-to-gdp">U.S. - South America Trade Balances-to-GDP</a></li>
+<li><a href="#u.s.-mexio-and-canada-trade-balances-to-gdp">U.S. Mexio and Canada Trade Balances-to-GDP</a></li>
+<li><a href="#u.s.---brazil-trade-balance-to-gdp-and-real-exchange-rate">U.S. - Brazil Trade Balance-to-GDP and Real Exchange Rate</a></li>
+<li><a href="#u.s.---canada-trade-balance-to-gdp-and-real-exchange-rate">U.S. - Canada Trade Balance-to-GDP and Real Exchange Rate</a></li>
+<li><a href="#u.s.---mexico-trade-balance-to-gdp-and-real-exchange-rate">U.S. - Mexico Trade Balance-to-GDP and Real Exchange Rate</a></li>
+<li><a href="#u.s.---europe-trade-balance-to-gdp-and-real-exchange-rate">U.S. - Europe Trade Balance-to-GDP and Real Exchange Rate</a></li>
+<li><a href="#u.s.---u.k.-trade-balance-to-gdp-and-real-exchange-rate">U.S. - U.K. Trade Balance-to-GDP and Real Exchange Rate</a></li>
+</ul></li>
+<li><a href="#new-based-indexes">New-Based Indexes</a>
+<ul>
+<li><a href="#geopolitical-risk">Geopolitical Risk</a></li>
+<li><a href="#u.s.-economic-policy-uncertainty">U.S. Economic Policy Uncertainty</a></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="capital-market-issuance" class="section level2 unnumbered">
+<h2 class="unnumbered">Capital Market Issuance</h2>
+<div id="capital-market-issuance-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Capital Market Issuance-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/issplotother_bbc-1.png" width="1104" /></p>
+</div>
+<div id="capital-market-issuance-to-gdp-including-t-bills" class="section level3 unnumbered">
+<h3 class="unnumbered">Capital Market Issuance-to-GDP: Including T-bills</h3>
+<p><img src="cmd_chartpack_files/figure-html/issplotother2-1.png" width="1104" /></p>
+</div>
+<div id="private-capital-market-and-treasury-issuance-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Private Capital Market and Treasury Issuance-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/issplotother3-1.png" width="1104" /></p>
+</div>
+<div id="total-capital-market-issuance-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Total Capital Market Issuance-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/issplotother4-1.png" width="1104" /></p>
+</div>
+<div id="non-treasury-issuance-to-gdp-vs-12m-change-in-10-yr-treasury-yield" class="section level3 unnumbered">
+<h3 class="unnumbered">Non-Treasury Issuance-to-GDP vs 12m change in 10-yr Treasury Yield</h3>
+<p><img src="cmd_chartpack_files/figure-html/privateissplot-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="asset-backed-securities" class="section level2 unnumbered">
+<h2 class="unnumbered">Asset-Backed Securities</h2>
+<div id="total-abs-issuance" class="section level3 unnumbered">
+<h3 class="unnumbered">Total ABS Issuance</h3>
+<p><img src="cmd_chartpack_files/figure-html/abs_iss_plot-1.png" width="1104" /></p>
+</div>
+<div id="private-label-cmbs-issuance" class="section level3 unnumbered">
+<h3 class="unnumbered">Private-Label CMBS Issuance</h3>
+<p><img src="cmd_chartpack_files/figure-html/cmbsissplot-1.png" width="1104" /></p>
+</div>
+<div id="rmbs-30-day-delinquencies-rate" class="section level3 unnumbered">
+<h3 class="unnumbered">RMBS 30 Day Delinquencies Rate</h3>
+<p><img src="cmd_chartpack_files/figure-html/rmbs_30_delinq_plot-1.png" width="1104" /></p>
+</div>
+<div id="rmbs-conditional-prepayment-rate" class="section level3 unnumbered">
+<h3 class="unnumbered">RMBS Conditional Prepayment Rate</h3>
+<p><img src="cmd_chartpack_files/figure-html/rmbs_prepayments_cpr_plot-1.png" width="1104" /></p>
+</div>
+<div id="rmbs-collateral-balance" class="section level3 unnumbered">
+<h3 class="unnumbered">RMBS Collateral Balance</h3>
+<p><img src="cmd_chartpack_files/figure-html/rmbs_collateral_balance_plot-1.png" width="1104" /></p>
+</div>
+<div id="rmbs-annualized-net-losses" class="section level3 unnumbered">
+<h3 class="unnumbered">RMBS Annualized Net Losses</h3>
+<p><img src="cmd_chartpack_files/figure-html/rmbs_annualized_net_losses_plot-1.png" width="1104" /></p>
+</div>
+<div id="auto-abs-30-day-delinquencies-rate" class="section level3 unnumbered">
+<h3 class="unnumbered">Auto ABS 30 Day Delinquencies Rate</h3>
+<p><img src="cmd_chartpack_files/figure-html/abs_auto_30_delinq_plot-1.png" width="1104" /></p>
+</div>
+<div id="auto-abs-conditional-prepayment-rate" class="section level3 unnumbered">
+<h3 class="unnumbered">Auto ABS Conditional Prepayment Rate</h3>
+<p><img src="cmd_chartpack_files/figure-html/abs_auto_prepayments_cpr_plot-1.png" width="1104" /></p>
+</div>
+<div id="auto-abs-collateral-balance" class="section level3 unnumbered">
+<h3 class="unnumbered">Auto ABS Collateral Balance</h3>
+<p><img src="cmd_chartpack_files/figure-html/abs_auto_collateral_balance_plot-1.png" width="1104" /></p>
+</div>
+<div id="auto-abs-annualized-net-losses" class="section level3 unnumbered">
+<h3 class="unnumbered">Auto ABS Annualized Net Losses</h3>
+<p><img src="cmd_chartpack_files/figure-html/abs_auto_annualized_net_losses_plot-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="treasury-and-federal-debt" class="section level2 unnumbered">
+<h2 class="unnumbered">Treasury and Federal Debt</h2>
+<div id="treasury-issuance-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Treasury Issuance-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/isstsy-1.png" width="1104" /></p>
+</div>
+<div id="treasury-note-and-bond-issuance-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Treasury Note and Bond Issuance-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/isstsy2-1.png" width="1104" /></p>
+</div>
+<div id="total-treasury-issuance-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Total Treasury Issuance-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/isstsy3-1.png" width="1104" /></p>
+</div>
+<div id="treasuries-outstanding-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Treasuries Outstanding-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/tsyout-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-gross-federal-debt-outstanding-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Gross Federal Debt Outstanding-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/tsyout2-1.png" width="1104" /></p>
+</div>
+<div id="average-maturity-of-privately-held-treasuries-outstanding" class="section level3 unnumbered">
+<h3 class="unnumbered">Average Maturity of Privately Held Treasuries Outstanding</h3>
+<p><img src="cmd_chartpack_files/figure-html/avgmat1-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-maturity-weighted-debt-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Maturity Weighted Debt-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/tsyoutmatwtd-1.png" width="1104" /></p>
+</div>
+<div id="federal-agency-debt-issuance-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Federal Agency Debt Issuance-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/agencyiss-1.png" width="1104" /></p>
+</div>
+<div id="federal-agency-debt-outstanding-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Federal Agency Debt Outstanding-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/agencyout-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="agency-mbs" class="section level2 unnumbered">
+<h2 class="unnumbered">Agency MBS</h2>
+<div id="single-family-agency-mbs-issuance-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Single-Family Agency MBS Issuance-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/MBSFIG_PLOT-1.png" width="1104" /></p>
+</div>
+<div id="single-family-fixed-rate-agency-mbs-conditional-prepayment-rates" class="section level3 unnumbered">
+<h3 class="unnumbered">Single-Family Fixed-rate Agency MBS Conditional Prepayment Rates</h3>
+<p><img src="cmd_chartpack_files/figure-html/mbscpr_PLOT-1.png" width="1104" /></p>
+</div>
+<div id="agency-multifamily-issuance" class="section level3 unnumbered">
+<h3 class="unnumbered">Agency Multifamily Issuance</h3>
+<p><img src="cmd_chartpack_files/figure-html/agencymfissplot-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="mortgage-trends" class="section level2 unnumbered">
+<h2 class="unnumbered">Mortgage Trends</h2>
+<div id="mortgage-originations" class="section level3 unnumbered">
+<h3 class="unnumbered">Mortgage Originations</h3>
+<p><img src="cmd_chartpack_files/figure-html/Mortorig_total-1.png" width="1104" /></p>
+</div>
+<div id="agency-mbs-issuance-and-mortgage-originations-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Agency MBS Issuance and Mortgage Originations-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/Mortorig-1.png" width="1104" /></p>
+</div>
+<div id="agency-mbs-issuance-and-mortgage-originations-to-gdp-1" class="section level3 unnumbered">
+<h3 class="unnumbered">Agency MBS Issuance and Mortgage Originations-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/Mortorig_logs-1.png" width="1104" /></p>
+</div>
+<div id="m-change-in-10-yr-treasury-yield-and-mortgage-originations-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">12M change in 10-yr Treasury Yield and Mortgage Originations-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/Mortd12-1.png" width="1104" /></p>
+</div>
+<div id="loan-shares-used-in-fhfa-hpi-valuation-data" class="section level3 unnumbered">
+<h3 class="unnumbered">Loan Shares Used In FHFA HPI Valuation Data</h3>
+<p><img src="cmd_chartpack_files/figure-html/fhfaloansharesplot-1.png" width="1104" /></p>
+</div>
+<div id="primary-dealer-net-positions-in-mbs-adjusted-for-mortgage-duration-and-treasury-10-yr-risk-premium" class="section level3 unnumbered">
+<h3 class="unnumbered">Primary Dealer Net Positions in MBS adjusted for Mortgage Duration and Treasury 10-yr Risk Premium</h3>
+<p><img src="cmd_chartpack_files/figure-html/MBSNPOS3_PLOT-1.png" width="1104" /></p>
+</div>
+<div id="primary-dealer-net-positions-in-mbs-adjusted-for-mortgage-duration-and-agency-mbs-issuance-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Primary Dealer Net Positions in MBS adjusted for Mortgage Duration and Agency MBS Issuance-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/MBSNPOS_PLOT-1.png" width="1104" /></p>
+</div>
+<div id="mortgage-refinance-index" class="section level3 unnumbered">
+<h3 class="unnumbered">Mortgage Refinance Index</h3>
+<p><img src="cmd_chartpack_files/figure-html/Refi_PLOT-1.png" width="1104" /></p>
+</div>
+<div id="mortgage-refinance-index-and-10-yr-risk-premium" class="section level3 unnumbered">
+<h3 class="unnumbered">Mortgage Refinance Index and 10-yr Risk Premium</h3>
+<p><img src="cmd_chartpack_files/figure-html/Refi_PLOT2-1.png" width="1104" /></p>
+</div>
+<div id="home-equity-withdrawal-to-retail-sales" class="section level3 unnumbered">
+<h3 class="unnumbered">Home Equity Withdrawal-to-Retail Sales</h3>
+<p><img src="cmd_chartpack_files/figure-html/resplot8-1.png" width="1104" /></p>
+</div>
+<div id="home-equity-withdrawal" class="section level3 unnumbered">
+<h3 class="unnumbered">Home Equity Withdrawal</h3>
+<p><img src="cmd_chartpack_files/figure-html/cashoutplot-1.png" width="1104" /></p>
+</div>
+<div id="cash-out-share-of-refinancings" class="section level3 unnumbered">
+<h3 class="unnumbered">Cash Out Share of Refinancings</h3>
+<p><img src="cmd_chartpack_files/figure-html/cashoutplotshare-1.png" width="1104" /></p>
+</div>
+<div id="median-age-of-refinanced-mortgage" class="section level3 unnumbered">
+<h3 class="unnumbered">Median Age of Refinanced Mortgage</h3>
+<p><img src="cmd_chartpack_files/figure-html/refiplot_medianage-1.png" width="1104" /></p>
+</div>
+<div id="median-ratio-of-old-to-new-mortgage-rate-at-time-of-refinancing" class="section level3 unnumbered">
+<h3 class="unnumbered">Median Ratio of Old to New Mortgage Rate At Time of Refinancing</h3>
+<p><img src="cmd_chartpack_files/figure-html/refiplot_rateratio-1.png" width="1104" /></p>
+</div>
+<div id="median-appreciation-on-exisiting-property-at-time-of-refinancing" class="section level3 unnumbered">
+<h3 class="unnumbered">Median Appreciation on Exisiting Property At Time of Refinancing</h3>
+<p><img src="cmd_chartpack_files/figure-html/refiplot_apprec-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="fha-and-va-activity" class="section level2 unnumbered">
+<h2 class="unnumbered">FHA and VA Activity</h2>
+<div id="fha-va-mortgage-insurance-volume" class="section level3 unnumbered">
+<h3 class="unnumbered">FHA &amp; VA Mortgage Insurance Volume</h3>
+<p><img src="cmd_chartpack_files/figure-html/FHAplot3-1.png" width="1104" /></p>
+</div>
+<div id="government-mortgage-activity" class="section level3 unnumbered">
+<h3 class="unnumbered">Government Mortgage Activity</h3>
+<p><img src="cmd_chartpack_files/figure-html/FHAplot4-1.png" width="1104" /></p>
+</div>
+<div id="fha-share-of-mortgage-originations" class="section level3 unnumbered">
+<h3 class="unnumbered">FHA Share of Mortgage Originations</h3>
+<p><img src="cmd_chartpack_files/figure-html/FHAplot2-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="fannie-mae-monthly-volume-summary" class="section level2 unnumbered">
+<h2 class="unnumbered">Fannie Mae Monthly Volume Summary</h2>
+<div id="fnma-guarantee-book-of-business" class="section level3 unnumbered">
+<h3 class="unnumbered">FNMA: Guarantee Book of Business</h3>
+<p><img src="cmd_chartpack_files/figure-html/fnmatableA_PLOT-1.png" width="1104" /></p>
+</div>
+<div id="fnma-retained-mortgage-portfolio-activity" class="section level3 unnumbered">
+<h3 class="unnumbered">FNMA: Retained Mortgage Portfolio Activity</h3>
+<p><img src="cmd_chartpack_files/figure-html/fnmatableB_PLOT-1.png" width="1104" /></p>
+</div>
+<div id="fnma-retained-mortgage-portfolio-composition" class="section level3 unnumbered">
+<h3 class="unnumbered">FNMA: Retained Mortgage Portfolio Composition</h3>
+<p><img src="cmd_chartpack_files/figure-html/fnmatableC_PLOT-1.png" width="1104" /></p>
+</div>
+<div id="fnma-mbs" class="section level3 unnumbered">
+<h3 class="unnumbered">FNMA MBS</h3>
+<p><img src="cmd_chartpack_files/figure-html/FNMAMBS_PLOT-1.png" width="1104" /></p>
+</div>
+<div id="fnma-book-of-business" class="section level3 unnumbered">
+<h3 class="unnumbered">FNMA Book of Business</h3>
+<p><img src="cmd_chartpack_files/figure-html/FNMABusiness_PLOT-1.png" width="1104" /></p>
+</div>
+<div id="fnma-retained-mortgage-portfolio-activity-1" class="section level3 unnumbered">
+<h3 class="unnumbered">FNMA Retained Mortgage Portfolio Activity</h3>
+<p><img src="cmd_chartpack_files/figure-html/FNMAretainedactivity_PLOT-1.png" width="1104" /></p>
+</div>
+<div id="fnma-long-term-debt-activity" class="section level3 unnumbered">
+<h3 class="unnumbered">FNMA Long-term Debt Activity</h3>
+<p><img src="cmd_chartpack_files/figure-html/fnmatable_debt-1.png" width="1104" /></p>
+</div>
+<div id="fnma-debt-outstanding" class="section level3 unnumbered">
+<h3 class="unnumbered">FNMA Debt Outstanding</h3>
+<p><img src="cmd_chartpack_files/figure-html/fnmatable_debt_out-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="freddie-mac-monthly-volume-summary" class="section level2 unnumbered">
+<h2 class="unnumbered">Freddie Mac Monthly Volume Summary</h2>
+<div id="fhlmc-total-mortgage-portfolio" class="section level3 unnumbered">
+<h3 class="unnumbered">FHLMC Total Mortgage Portfolio</h3>
+<p><img src="cmd_chartpack_files/figure-html/fhlmc_port_PLOT-1.png" width="1104" /></p>
+</div>
+<div id="fhlmc-total-mortgage-portfolio-rates" class="section level3 unnumbered">
+<h3 class="unnumbered">FHLMC Total Mortgage Portfolio Rates</h3>
+<p><img src="cmd_chartpack_files/figure-html/fhlmc_port_gr_PLOT-1.png" width="1104" /></p>
+</div>
+<div id="fhlmc-mortgage-related-securities" class="section level3 unnumbered">
+<h3 class="unnumbered">FHLMC Mortgage Related Securities</h3>
+<p><img src="cmd_chartpack_files/figure-html/FHLMCMBS_PLOT-1.png" width="1104" /></p>
+</div>
+<div id="fhlmc-mortage-related-investments-portfolio" class="section level3 unnumbered">
+<h3 class="unnumbered">FHLMC Mortage Related Investments Portfolio</h3>
+<p><img src="cmd_chartpack_files/figure-html/fhlmc_mrip_PLOT-1.png" width="1104" /></p>
+</div>
+<div id="fhlmc-mortage-related-investments-portfolio-rates" class="section level3 unnumbered">
+<h3 class="unnumbered">FHLMC Mortage Related Investments Portfolio Rates</h3>
+<p><img src="cmd_chartpack_files/figure-html/fhlmc_mrip_gr_PLOT-1.png" width="1104" /></p>
+</div>
+<div id="fhlmc-portfolio-composition" class="section level3 unnumbered">
+<h3 class="unnumbered">FHLMC Portfolio Composition</h3>
+<p><img src="cmd_chartpack_files/figure-html/fhlmc_mripc_PLOT-1.png" width="1104" /></p>
+</div>
+<div id="fhlmc-mortgage-related-securities-outstanding-and-total-mortgage-holdings" class="section level3 unnumbered">
+<h3 class="unnumbered">FHLMC Mortgage Related Securities Outstanding and Total Mortgage Holdings</h3>
+<p><img src="cmd_chartpack_files/figure-html/FHLMCMBSout_PLOT-1.png" width="1104" /></p>
+</div>
+<div id="secondary-market-transactions-in-mortgages" class="section level3 unnumbered">
+<h3 class="unnumbered">Secondary Market Transactions in Mortgages</h3>
+<p><img src="cmd_chartpack_files/figure-html/MBSTRANS_PLOT-1.png" width="1104" /></p>
+</div>
+<div id="freddie-mac-long-term-debt-activity" class="section level3 unnumbered">
+<h3 class="unnumbered">Freddie Mac Long-term Debt Activity</h3>
+<p><img src="cmd_chartpack_files/figure-html/fhlmc_table_debt-1.png" width="1104" /></p>
+</div>
+<div id="freddie-mac-debt-outstanding" class="section level3 unnumbered">
+<h3 class="unnumbered">Freddie Mac Debt Outstanding</h3>
+<p><img src="cmd_chartpack_files/figure-html/fhlmc_table_debt_out-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="fnma-multifamily-mortgages" class="section level2 unnumbered">
+<h2 class="unnumbered">FNMA Multifamily Mortgages</h2>
+<div id="fnma-multifamily-mbs-issuances-and-loan-purchases" class="section level3 unnumbered">
+<h3 class="unnumbered">FNMA Multifamily MBS Issuances and Loan Purchases</h3>
+<p><img src="cmd_chartpack_files/figure-html/fnmamfiss_PLOT-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="gnma-issuance" class="section level2 unnumbered">
+<h2 class="unnumbered">GNMA Issuance</h2>
+<div id="gnma-multifamily-pool-issuance" class="section level3 unnumbered">
+<h3 class="unnumbered">GNMA Multifamily Pool Issuance</h3>
+<p><img src="cmd_chartpack_files/figure-html/gnmamfiss-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="fha-multifamily-mortgages" class="section level2 unnumbered">
+<h2 class="unnumbered">FHA Multifamily Mortgages</h2>
+<div id="fha-multifamily-gross-endorsements-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">FHA Multifamily Gross Endorsements-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/fhamforig-1.png" width="1104" /></p>
+</div>
+<div id="fha-multifamily-real-gross-endorsements" class="section level3 unnumbered">
+<h3 class="unnumbered">FHA Multifamily Real Gross Endorsements</h3>
+<p><img src="cmd_chartpack_files/figure-html/fhamforigreal-1.png" width="1104" /></p>
+</div>
+<div id="fha-gross-endorsements-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">FHA Gross Endorsements-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/fha_out-1.png" width="1104" /></p>
+</div>
+<div id="fha-insured-40-yr-multifamily-interest-rates" class="section level3 unnumbered">
+<h3 class="unnumbered">FHA Insured 40-yr Multifamily Interest Rates</h3>
+<p><img src="cmd_chartpack_files/figure-html/fhamfratesA-1.png" width="1104" /></p>
+</div>
+<div id="fha-multifamily-mortgage-rate-and-single-family-mortgage-rate" class="section level3 unnumbered">
+<h3 class="unnumbered">FHA Multifamily Mortgage Rate and Single Family Mortgage Rate</h3>
+<p><img src="cmd_chartpack_files/figure-html/mf_rates_mort-1.png" width="1104" /></p>
+</div>
+<div id="fha-multifamily-mortgage-refi-incentive" class="section level3 unnumbered">
+<h3 class="unnumbered">FHA Multifamily Mortgage Refi Incentive</h3>
+<p><img src="cmd_chartpack_files/figure-html/mf_rates_mort2-1.png" width="1104" /></p>
+</div>
+<div id="real-value-of-fha-insured-debt-per-apartment-unit" class="section level3 unnumbered">
+<h3 class="unnumbered">Real value of FHA Insured Debt per Apartment Unit</h3>
+<p><img src="cmd_chartpack_files/figure-html/fhaoutplot-1.png" width="1104" /></p>
+</div>
+<div id="fha-multifamily-mortgage-debt-insured-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">FHA Multifamily Mortgage Debt Insured-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/fhaoutplot2-1.png" width="1104" /></p>
+</div>
+<div id="fha-multifamily-insured-prepayment-rate" class="section level3 unnumbered">
+<h3 class="unnumbered">FHA Multifamily Insured Prepayment Rate</h3>
+<p><img src="cmd_chartpack_files/figure-html/fhaprepay-1.png" width="1104" /></p>
+</div>
+<div id="fha-multifamily-exit-rates" class="section level3 unnumbered">
+<h3 class="unnumbered">FHA Multifamily Exit Rates</h3>
+<p><img src="cmd_chartpack_files/figure-html/fhatrans_mult-1.png" width="1104" /></p>
+</div>
+<div id="entry-rate-less-exit-rate-into-fha-insurance" class="section level3 unnumbered">
+<h3 class="unnumbered">Entry Rate less Exit Rate into FHA insurance</h3>
+<p><img src="cmd_chartpack_files/figure-html/fhatrans-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="corporations" class="section level2 unnumbered">
+<h2 class="unnumbered">Corporations</h2>
+<div id="corporate-issuance-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Corporate Issuance-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/corpissplot-1.png" width="1104" /></p>
+</div>
+<div id="corporate-issuance-to-gdp-1990-" class="section level3 unnumbered">
+<h3 class="unnumbered">Corporate Issuance-to-GDP: 1990-</h3>
+<p><img src="cmd_chartpack_files/figure-html/corpissrecentplot-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-corporate-equity-issuance-to-sp500" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Corporate Equity Issuance-to-SP500</h3>
+<p><img src="cmd_chartpack_files/figure-html/corpisstostockprices-1.png" width="1104" /></p>
+</div>
+<div id="domestic-non-financial-corporate-equity-issuance" class="section level3 unnumbered">
+<h3 class="unnumbered">Domestic Non-financial Corporate Equity Issuance</h3>
+<p><img src="cmd_chartpack_files/figure-html/corpeqissseoipo-1.png" width="1104" /></p>
+</div>
+<div id="net-equity-issuances-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Net Equity Issuances-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/eq_iss_frb_net-1.png" width="1104" /></p>
+</div>
+<div id="gross-equity-issuance-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Gross Equity Issuance-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/grossequityiss_frb-1.png" width="1104" /></p>
+</div>
+<div id="equity-retirement-repurchases-and-mergers-and-acquisitions-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Equity Retirement: Repurchases and Mergers and Acquisitions-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/eqretirementiss_frb-1.png" width="1104" /></p>
+</div>
+<div id="corporate-bonds-outstanding-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Corporate Bonds Outstanding-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/cbondsouttogdp-1.png" width="1104" /></p>
+</div>
+<div id="m-ch-in-equity-issuance-to-gdp-and-stock-prices-part-1" class="section level3 unnumbered">
+<h3 class="unnumbered">12M ch in Equity Issuance-to-GDP and Stock Prices (Part 1)</h3>
+<p><img src="cmd_chartpack_files/figure-html/eqisspriceplot-1.png" width="1104" /></p>
+</div>
+<div id="m-ch-in-equity-issuance-to-gdp-and-stock-prices-part-2" class="section level3 unnumbered">
+<h3 class="unnumbered">12M ch in Equity Issuance-to-GDP and Stock Prices (Part 2)</h3>
+<p><img src="cmd_chartpack_files/figure-html/eqissprice2plot-1.png" width="1104" /></p>
+</div>
+<div id="mergers-and-acquisitions" class="section level3 unnumbered">
+<h3 class="unnumbered">Mergers and Acquisitions</h3>
+<p><img src="cmd_chartpack_files/figure-html/mergersplotA-1.png" width="1104" /></p>
+</div>
+<div id="number-of-mergers-and-acquisitions-deflated-by-cpi" class="section level3 unnumbered">
+<h3 class="unnumbered">Number of Mergers and Acquisitions Deflated by CPI</h3>
+<p><img src="cmd_chartpack_files/figure-html/mergersplotcpi-1.png" width="1104" /></p>
+</div>
+<div id="value-of-mergers-and-acquisitions" class="section level3 unnumbered">
+<h3 class="unnumbered">Value of Mergers and Acquisitions</h3>
+<p><img src="cmd_chartpack_files/figure-html/mergersvalraw-1.png" width="1104" /></p>
+</div>
+<div id="value-of-mergers-and-acquisitions-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Value of Mergers and Acquisitions-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/mergersplottogdp-1.png" width="1104" /></p>
+</div>
+<div id="sp500-to-retail-and-business-sales-ratios" class="section level3 unnumbered">
+<h3 class="unnumbered">SP500-to-Retail and Business Sales Ratios</h3>
+<p><img src="cmd_chartpack_files/figure-html/spxtosales-1.png" width="1104" /></p>
+</div>
+<div id="sp500-to-nominal-gdp-ratio" class="section level3 unnumbered">
+<h3 class="unnumbered">SP500-to-Nominal GDP Ratio</h3>
+<p><img src="cmd_chartpack_files/figure-html/spxtpngdp-1.png" width="1104" /></p>
+</div>
+<div id="real-sp-500" class="section level3 unnumbered">
+<h3 class="unnumbered">Real S&amp;P 500</h3>
+<p><img src="cmd_chartpack_files/figure-html/spxtowpi-1.png" width="1104" /></p>
+</div>
+<div id="real-nyse-trading-volume" class="section level3 unnumbered">
+<h3 class="unnumbered">Real NYSE Trading Volume</h3>
+<p><img src="cmd_chartpack_files/figure-html/nysetowpi-1.png" width="1104" /></p>
+</div>
+<div id="real-equity-margin-debt" class="section level3 unnumbered">
+<h3 class="unnumbered">Real Equity Margin Debt</h3>
+<p><img src="cmd_chartpack_files/figure-html/realmargindebt-1.png" width="1104" /></p>
+</div>
+<div id="equity-margin-debt-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Equity Margin Debt-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/margintogdp-1.png" width="1104" /></p>
+</div>
+<div id="baa-10y-spread-and-economic-policy-uncertainty" class="section level3 unnumbered">
+<h3 class="unnumbered">BAA-10Y Spread and Economic Policy Uncertainty</h3>
+<p><img src="cmd_chartpack_files/figure-html/baaepu-1.png" width="1104" /></p>
+</div>
+<div id="baa-10y-spread-and-baml-hy-oas" class="section level3 unnumbered">
+<h3 class="unnumbered">BAA-10Y Spread and BAML HY OAS</h3>
+<p><img src="cmd_chartpack_files/figure-html/baatenspout-1.png" width="1104" /></p>
+</div>
+<div id="excess-corporate-bond-premium" class="section level3 unnumbered">
+<h3 class="unnumbered">Excess Corporate Bond Premium</h3>
+<p><img src="cmd_chartpack_files/figure-html/ebpplot-1.png" width="1104" /></p>
+</div>
+<div id="commercial-paper-outstanding-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Commercial Paper Outstanding-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/cp_out_plot-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="u.s.-equity-real-industry-price-indexes" class="section level2 unnumbered">
+<h2 class="unnumbered">U.S. Equity Real Industry Price Indexes</h2>
+<div id="consumer-goods-energy-and-manufacturing" class="section level3 unnumbered">
+<h3 class="unnumbered">Consumer Goods, Energy, and Manufacturing</h3>
+<p><img src="cmd_chartpack_files/figure-html/indus_idx_plotsA-1.png" width="1104" /></p>
+</div>
+<div id="energy-stock-prices-to-fuel-prices" class="section level3 unnumbered">
+<h3 class="unnumbered">Energy Stock Prices-to-Fuel Prices</h3>
+<p><img src="cmd_chartpack_files/figure-html/indus_idx_plotsA1-1.png" width="1104" /></p>
+</div>
+<div id="hi-tech-telecom-retail-and-health" class="section level3 unnumbered">
+<h3 class="unnumbered">Hi-Tech, Telecom, Retail and Health</h3>
+<p><img src="cmd_chartpack_files/figure-html/indus_idx_plotsB-1.png" width="1104" /></p>
+</div>
+<div id="retail-stock-prices-to-retail-sales" class="section level3 unnumbered">
+<h3 class="unnumbered">Retail Stock Prices-to-Retail Sales</h3>
+<p><img src="cmd_chartpack_files/figure-html/indus_idx_plotsC-1.png" width="1104" /></p>
+</div>
+<div id="agriculture-and-alcohol" class="section level3 unnumbered">
+<h3 class="unnumbered">Agriculture and Alcohol</h3>
+<p><img src="cmd_chartpack_files/figure-html/indus_idx_plots-1.png" width="1104" /></p>
+</div>
+<div id="tobacco-recreation-entertainment-and-publishing" class="section level3 unnumbered">
+<h3 class="unnumbered">Tobacco, Recreation, Entertainment and Publishing</h3>
+<p><img src="cmd_chartpack_files/figure-html/indus_idx_plots2-1.png" width="1104" /></p>
+</div>
+<div id="consumer-goods-and-apparel" class="section level3 unnumbered">
+<h3 class="unnumbered">Consumer Goods and Apparel</h3>
+<p><img src="cmd_chartpack_files/figure-html/indus_idx_plots3-1.png" width="1104" /></p>
+</div>
+<div id="medical" class="section level3 unnumbered">
+<h3 class="unnumbered">Medical</h3>
+<p><img src="cmd_chartpack_files/figure-html/indus_idx_plots4-1.png" width="1104" /></p>
+</div>
+<div id="chemicals-rubber-and-plastics-textiles-and-construction-materials" class="section level3 unnumbered">
+<h3 class="unnumbered">Chemicals, Rubber and Plastics, Textiles, and Construction Materials</h3>
+<p><img src="cmd_chartpack_files/figure-html/indus_idx_plots5-1.png" width="1104" /></p>
+</div>
+<div id="construction-steel-works-fabricated-products-and-machinery" class="section level3 unnumbered">
+<h3 class="unnumbered">Construction, Steel Works, Fabricated Products, and Machinery</h3>
+<p><img src="cmd_chartpack_files/figure-html/indus_idx_plots6-1.png" width="1104" /></p>
+</div>
+<div id="autos-aircraft-shipbuilding-and-railroad-equipment-and-defense" class="section level3 unnumbered">
+<h3 class="unnumbered">Autos, Aircraft, Shipbuilding and Railroad Equipment, and Defense</h3>
+<p><img src="cmd_chartpack_files/figure-html/indus_idx_plots7-1.png" width="1104" /></p>
+</div>
+<div id="metals-and-energy" class="section level3 unnumbered">
+<h3 class="unnumbered">Metals and Energy</h3>
+<p><img src="cmd_chartpack_files/figure-html/indus_idx_plots8-1.png" width="1104" /></p>
+</div>
+<div id="utilities-communication-personal-and-business-services" class="section level3 unnumbered">
+<h3 class="unnumbered">Utilities, Communication, Personal and Business Services</h3>
+<p><img src="cmd_chartpack_files/figure-html/indus_idx_plots9-1.png" width="1104" /></p>
+</div>
+<div id="computers-software-electronic-equipment-and-measuring-and-control-equipment" class="section level3 unnumbered">
+<h3 class="unnumbered">Computers, Software, Electronic Equipment, and Measuring and Control Equipment</h3>
+<p><img src="cmd_chartpack_files/figure-html/indus_idx_plots10-1.png" width="1104" /></p>
+</div>
+<div id="business-supplies-shipping-containers-and-transportation" class="section level3 unnumbered">
+<h3 class="unnumbered">Business supplies, Shipping Containers, and Transportation</h3>
+<p><img src="cmd_chartpack_files/figure-html/indus_idx_plots11-1.png" width="1104" /></p>
+</div>
+<div id="wholesale-retail-hospitality-and-other" class="section level3 unnumbered">
+<h3 class="unnumbered">Wholesale, Retail, Hospitality and Other</h3>
+<p><img src="cmd_chartpack_files/figure-html/indus_idx_plots12-1.png" width="1104" /></p>
+</div>
+<div id="wholesale-and-retail-business-indexes-to-sales" class="section level3 unnumbered">
+<h3 class="unnumbered">Wholesale and Retail Business Indexes-to-Sales</h3>
+<p><img src="cmd_chartpack_files/figure-html/indus_idx_plots12a-1.png" width="1104" /></p>
+</div>
+<div id="wholesale-stock-prices-to-wholesalers-sales" class="section level3 unnumbered">
+<h3 class="unnumbered">Wholesale Stock Prices-to-Wholesalers Sales</h3>
+<p><img src="cmd_chartpack_files/figure-html/indus_idx_plots12b-1.png" width="1104" /></p>
+</div>
+<div id="banking-insurance-real-estate-and-trading" class="section level3 unnumbered">
+<h3 class="unnumbered">Banking, Insurance, Real Estate, and Trading</h3>
+<p><img src="cmd_chartpack_files/figure-html/indus_idx_plots13-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="state-and-local-government" class="section level2 unnumbered">
+<h2 class="unnumbered">State and Local Government</h2>
+<div id="state-local-government-bond-issuance-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">State &amp; Local Government Bond Issuance-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/muniissplot-1.png" width="1104" /></p>
+</div>
+<div id="refunding-bond-issuance-to-gdp-and-change-in-muni-yields" class="section level3 unnumbered">
+<h3 class="unnumbered">Refunding Bond Issuance-to-GDP and Change in Muni Yields</h3>
+<p><img src="cmd_chartpack_files/figure-html/muniyieldplot-1.png" width="1104" /></p>
+</div>
+<div id="muni-issuance-to-gdp-go-and-revenue-bonds" class="section level3 unnumbered">
+<h3 class="unnumbered">Muni Issuance-to-GDP: GO and Revenue Bonds</h3>
+<p><img src="cmd_chartpack_files/figure-html/munidetailA-1.png" width="1104" /></p>
+</div>
+<div id="muni-sector-issuance-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Muni Sector Issuance-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/munidetailB-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="primary-dealer-net-positions" class="section level2 unnumbered">
+<h2 class="unnumbered">Primary Dealer Net Positions</h2>
+<div id="primary-dealer-net-positions-in-treasury-securities" class="section level3 unnumbered">
+<h3 class="unnumbered">Primary Dealer Net Positions in Treasury Securities</h3>
+<p><img src="cmd_chartpack_files/figure-html/pdnpos1-1.png" width="1104" /></p>
+</div>
+<div id="net-positions-in-treasury-securities-with-less-than-one-year-to-maturity" class="section level3 unnumbered">
+<h3 class="unnumbered">Net Positions in Treasury Securities with less than one-year to maturity</h3>
+<p><img src="cmd_chartpack_files/figure-html/pdnpos2-1.png" width="1104" /></p>
+</div>
+<div id="net-positions-in-treasury-securities-with-greater-than-one-year-till-maturity" class="section level3 unnumbered">
+<h3 class="unnumbered">Net Positions in Treasury Securities with greater than one-year till maturity</h3>
+<p><img src="cmd_chartpack_files/figure-html/pdnpos3-1.png" width="1104" /></p>
+</div>
+<div id="net-duration-of-treasury-positions" class="section level3 unnumbered">
+<h3 class="unnumbered">Net Duration of Treasury Positions</h3>
+<p><img src="cmd_chartpack_files/figure-html/pdnpos4-1.png" width="1104" /></p>
+</div>
+<div id="net-positions-in-treasury-securities-7-yr" class="section level3 unnumbered">
+<h3 class="unnumbered">Net Positions in Treasury Securities &gt; 7-yr</h3>
+<p><img src="cmd_chartpack_files/figure-html/pdnpos5-1.png" width="1104" /></p>
+</div>
+<div id="net-positions-in-federal-agency-debt" class="section level3 unnumbered">
+<h3 class="unnumbered">Net Positions in Federal Agency Debt</h3>
+<p><img src="cmd_chartpack_files/figure-html/pdnpos6-1.png" width="1104" /></p>
+</div>
+<div id="primary-dealer-net-treasury-positions-and-the-baa-10yr-spread" class="section level3 unnumbered">
+<h3 class="unnumbered">Primary Dealer Net Treasury Positions and The BAA-10yr Spread</h3>
+<p><img src="cmd_chartpack_files/figure-html/pdnposbaa-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="net-repo" class="section level2 unnumbered">
+<h2 class="unnumbered">Net Repo</h2>
+<div id="net-repo-1" class="section level3 unnumbered">
+<h3 class="unnumbered">Net Repo</h3>
+<p><img src="cmd_chartpack_files/figure-html/pdrepo1-1.png" width="1104" /></p>
+</div>
+<div id="net-on-repo" class="section level3 unnumbered">
+<h3 class="unnumbered">Net O/N Repo</h3>
+<p><img src="cmd_chartpack_files/figure-html/pdrepo2-1.png" width="1104" /></p>
+</div>
+<div id="net-term-repo" class="section level3 unnumbered">
+<h3 class="unnumbered">Net Term Repo</h3>
+<p><img src="cmd_chartpack_files/figure-html/pdrepo3-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="transactions" class="section level2 unnumbered">
+<h2 class="unnumbered">Transactions</h2>
+<div id="primary-dealer-transactions" class="section level3 unnumbered">
+<h3 class="unnumbered">Primary Dealer Transactions</h3>
+<p><img src="cmd_chartpack_files/figure-html/trans1-1.png" width="1104" /></p>
+</div>
+<div id="agency-debt-and-mbs-transactions" class="section level3 unnumbered">
+<h3 class="unnumbered">Agency Debt and MBS Transactions</h3>
+<p><img src="cmd_chartpack_files/figure-html/trans3-1.png" width="1104" /></p>
+</div>
+<div id="treasury-transactions" class="section level3 unnumbered">
+<h3 class="unnumbered">Treasury Transactions</h3>
+<p><img src="cmd_chartpack_files/figure-html/trans2-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="fed-holdings-of-treasuries" class="section level2 unnumbered">
+<h2 class="unnumbered">Fed Holdings of Treasuries</h2>
+<div id="holdings-of-treasuries" class="section level3 unnumbered">
+<h3 class="unnumbered">Holdings of Treasuries</h3>
+<p><img src="cmd_chartpack_files/figure-html/fedholds1-1.png" width="1104" /></p>
+</div>
+<div id="holdings-as-a-fraction-outstanding" class="section level3 unnumbered">
+<h3 class="unnumbered">Holdings as a fraction outstanding</h3>
+<p><img src="cmd_chartpack_files/figure-html/fedholds2-1.png" width="1104" /></p>
+</div>
+<div id="holding-of-treasuries-greater-than-10-yrs" class="section level3 unnumbered">
+<h3 class="unnumbered">Holding of Treasuries greater than 10-yrs</h3>
+<p><img src="cmd_chartpack_files/figure-html/fedholds4-1.png" width="1104" /></p>
+</div>
+<div id="net-duration-of-the-federal-reserves-treasury-holdings" class="section level3 unnumbered">
+<h3 class="unnumbered">Net Duration of The Federal Reserves Treasury Holdings</h3>
+<p><img src="cmd_chartpack_files/figure-html/fedholds3-1.png" width="1104" /></p>
+</div>
+<div id="maturity-of-federal-reserve-treasury-holdings-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Maturity of Federal Reserve Treasury Holdings-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/fedholds5-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="bank-assets" class="section level2 unnumbered">
+<h2 class="unnumbered">Bank Assets</h2>
+<div id="bank-holdings-of-treasury-agency-securities" class="section level3 unnumbered">
+<h3 class="unnumbered">Bank Holdings of Treasury &amp; Agency Securities</h3>
+<p><img src="cmd_chartpack_files/figure-html/banksholds1-1.png" width="1104" /></p>
+</div>
+<div id="large-domestic-bank-holdings-of-agency-mbs-and-treasuries" class="section level3 unnumbered">
+<h3 class="unnumbered">Large Domestic Bank Holdings of Agency MBS and Treasuries</h3>
+<p><img src="cmd_chartpack_files/figure-html/banksholds2-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="u.s.-interest-rates" class="section level2 unnumbered">
+<h2 class="unnumbered">U.S. Interest Rates</h2>
+<div id="term-structure" class="section level3 unnumbered">
+<h3 class="unnumbered">Term Structure</h3>
+<p><img src="cmd_chartpack_files/figure-html/termstrucplot_hist-1.png" width="1104" /></p>
+</div>
+<div id="short-term-interest-rates" class="section level3 unnumbered">
+<h3 class="unnumbered">Short-term Interest Rates</h3>
+<p><img src="cmd_chartpack_files/figure-html/shortrates_plot-1.png" width="1104" /></p>
+</div>
+<div id="long-term-interest-rates" class="section level3 unnumbered">
+<h3 class="unnumbered">Long-term Interest Rates</h3>
+<p><img src="cmd_chartpack_files/figure-html/longbonds_hist-1.png" width="1104" /></p>
+</div>
+<div id="aaa-corporate-bond-yield-and-us-treasury-bond-yield" class="section level3 unnumbered">
+<h3 class="unnumbered">AAA Corporate Bond Yield and US Treasury Bond Yield</h3>
+<p><img src="cmd_chartpack_files/figure-html/usa_aaa-1.png" width="1104" /></p>
+</div>
+<div id="long-term-interest-rates-1999-" class="section level3 unnumbered">
+<h3 class="unnumbered">Long-term Interest Rates: 1999-</h3>
+<p><img src="cmd_chartpack_files/figure-html/longbonds_recent-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="expectations" class="section level2 unnumbered">
+<h2 class="unnumbered">Expectations</h2>
+<div id="short-term-inflation-expectations" class="section level3 unnumbered">
+<h3 class="unnumbered">Short-term Inflation Expectations</h3>
+<p><img src="cmd_chartpack_files/figure-html/infexp_short_hist-1.png" width="1104" /></p>
+</div>
+<div id="short-term-inflation-expectations-2000-" class="section level3 unnumbered">
+<h3 class="unnumbered">Short-term Inflation Expectations: 2000-</h3>
+<p><img src="cmd_chartpack_files/figure-html/infexp_short_recent-1.png" width="1104" /></p>
+</div>
+<div id="long-term-inflation-expectations" class="section level3 unnumbered">
+<h3 class="unnumbered">Long-term Inflation Expectations</h3>
+<p><img src="cmd_chartpack_files/figure-html/infexp_long_hist-1.png" width="1104" /></p>
+</div>
+<div id="long-term-inflation-expectations-2000-" class="section level3 unnumbered">
+<h3 class="unnumbered">Long-term Inflation Expectations: 2000-</h3>
+<p><img src="cmd_chartpack_files/figure-html/infexp_long_recent-1.png" width="1104" /></p>
+</div>
+<div id="term-structure-of-inflation-expectations" class="section level3 unnumbered">
+<h3 class="unnumbered">Term Structure of Inflation Expectations</h3>
+<p><img src="cmd_chartpack_files/figure-html/infexpterm_struct-1.png" width="1104" /></p>
+</div>
+<div id="nominal-gdp-expectations" class="section level3 unnumbered">
+<h3 class="unnumbered">Nominal GDP Expectations</h3>
+<p><img src="cmd_chartpack_files/figure-html/ngdpexp_hist-1.png" width="1104" /></p>
+</div>
+<div id="nominal-gdp-expectations-2000-" class="section level3 unnumbered">
+<h3 class="unnumbered">:Nominal GDP Expectations: 2000-</h3>
+<p><img src="cmd_chartpack_files/figure-html/ngdpexp_recent-1.png" width="1104" /></p>
+</div>
+<div id="ism-and-short-term-less-long-term-expected-ngdp-growth" class="section level3 unnumbered">
+<h3 class="unnumbered">ISM and Short-term Less Long-term Expected NGDP Growth</h3>
+<p><img src="cmd_chartpack_files/figure-html/ngdpexpism-1.png" width="1104" /></p>
+</div>
+<div id="real-gdp-expectations" class="section level3 unnumbered">
+<h3 class="unnumbered">Real GDP Expectations</h3>
+<p><img src="cmd_chartpack_files/figure-html/rgdpexp_hist-1.png" width="1104" /></p>
+</div>
+<div id="real-gdp-expectations-2000-" class="section level3 unnumbered">
+<h3 class="unnumbered">Real GDP Expectations: 2000-</h3>
+<p><img src="cmd_chartpack_files/figure-html/rgdpexp_recent-1.png" width="1104" /></p>
+</div>
+<div id="ism-and-short-term-less-long-term-expected-rgdp-growth" class="section level3 unnumbered">
+<h3 class="unnumbered">ISM and Short-term Less Long-term Expected RGDP Growth</h3>
+<p><img src="cmd_chartpack_files/figure-html/rgdpexpism-1.png" width="1104" /></p>
+</div>
+<div id="real-gdp-inter-quartile-range" class="section level3 unnumbered">
+<h3 class="unnumbered">Real GDP Inter-Quartile Range</h3>
+<p><img src="cmd_chartpack_files/figure-html/rgdpiqr_hist-1.png" width="1104" /></p>
+</div>
+<div id="real-gdp-inter-quartile-range-2000-" class="section level3 unnumbered">
+<h3 class="unnumbered">Real GDP Inter-Quartile Range: 2000-</h3>
+<p><img src="cmd_chartpack_files/figure-html/rgdpiqr_recent-1.png" width="1104" /></p>
+</div>
+<div id="nominal-gdp-inter-quartile-range" class="section level3 unnumbered">
+<h3 class="unnumbered">Nominal GDP Inter-Quartile Range</h3>
+<p><img src="cmd_chartpack_files/figure-html/ngdpiqr_hist-1.png" width="1104" /></p>
+</div>
+<div id="nominal-gdp-inter-quartile-range-2000-" class="section level3 unnumbered">
+<h3 class="unnumbered">Nominal GDP Inter-Quartile Range: 2000-</h3>
+<p><img src="cmd_chartpack_files/figure-html/ngdpiqr_recent-1.png" width="1104" /></p>
+</div>
+<div id="nominal-gdp-inter-quartile-range-and-credit-spreads" class="section level3 unnumbered">
+<h3 class="unnumbered">Nominal GDP Inter-Quartile Range and Credit Spreads</h3>
+<p><img src="cmd_chartpack_files/figure-html/ngdpiqr_baatensp-1.png" width="1104" /></p>
+</div>
+<div id="inflation-inter-quartile-range" class="section level3 unnumbered">
+<h3 class="unnumbered">Inflation Inter-Quartile Range</h3>
+<p><img src="cmd_chartpack_files/figure-html/cpiinfiqr_hist-1.png" width="1104" /></p>
+</div>
+<div id="inflation-inter-quartile-range-2000-" class="section level3 unnumbered">
+<h3 class="unnumbered">Inflation Inter-Quartile Range: 2000-</h3>
+<p><img src="cmd_chartpack_files/figure-html/cpiinfiqr_recent-1.png" width="1104" /></p>
+</div>
+<div id="cpi-inter-quartile-range-and-baa-aaa-spread" class="section level3 unnumbered">
+<h3 class="unnumbered">CPI Inter-Quartile Range and BAA-AAA Spread</h3>
+<p><img src="cmd_chartpack_files/figure-html/cpiinfiqr_baatensp-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="u.s.-expected-returns" class="section level2 unnumbered">
+<h2 class="unnumbered">U.S. Expected Returns</h2>
+<div id="treasury-price-index" class="section level3 unnumbered">
+<h3 class="unnumbered">Treasury Price Index</h3>
+<p><img src="cmd_chartpack_files/figure-html/tsypiplot-1.png" width="1104" /></p>
+</div>
+<div id="annual-treasury-returns" class="section level3 unnumbered">
+<h3 class="unnumbered">Annual Treasury Returns</h3>
+<p><img src="cmd_chartpack_files/figure-html/tsyrret_hist-1.png" width="1104" /></p>
+</div>
+<div id="one-yr-treasury-excess-returns" class="section level3 unnumbered">
+<h3 class="unnumbered">One-yr Treasury Excess Returns</h3>
+<p><img src="cmd_chartpack_files/figure-html/tsyrxrx_hist-1.png" width="1104" /></p>
+</div>
+<div id="average-bank-income-gap" class="section level3 unnumbered">
+<h3 class="unnumbered">Average Bank Income Gap</h3>
+<p><img src="cmd_chartpack_files/figure-html/netincgapplot-1.png" width="1104" /></p>
+</div>
+<div id="level-of-treasury-yields-and-fundamental-de-trenders-part-1" class="section level3 unnumbered">
+<h3 class="unnumbered">Level of Treasury Yields and Fundamental De-trenders (Part 1)</h3>
+<p><img src="cmd_chartpack_files/figure-html/expret1A-1.png" width="1104" /></p>
+</div>
+<div id="level-of-treasury-yields-and-fundamental-de-trenders-1990-" class="section level3 unnumbered">
+<h3 class="unnumbered">Level of Treasury Yields and Fundamental De-trenders: 1990-</h3>
+<p><img src="cmd_chartpack_files/figure-html/expret1B-1.png" width="1104" /></p>
+</div>
+<div id="average-expected-and-realized-treasury-return-part-1" class="section level3 unnumbered">
+<h3 class="unnumbered">Average Expected and Realized Treasury Return (Part 1)</h3>
+<p><img src="cmd_chartpack_files/figure-html/exprret2-1.png" width="1104" /></p>
+</div>
+<div id="average-expected-and-realized-treasury-return-part-2" class="section level3 unnumbered">
+<h3 class="unnumbered">Average Expected and Realized Treasury Return (Part 2)</h3>
+<p><img src="cmd_chartpack_files/figure-html/exprret2b2-1.png" width="1104" /></p>
+</div>
+<div id="regression-based-expected-excess-treasury-returns-part-1" class="section level3 unnumbered">
+<h3 class="unnumbered">Regression Based Expected Excess Treasury Returns (Part 1)</h3>
+<p><img src="cmd_chartpack_files/figure-html/expretpredlevelx-1.png" width="1104" /></p>
+</div>
+<div id="regression-based-expected-excess-treasury-returns-part-2" class="section level3 unnumbered">
+<h3 class="unnumbered">Regression Based Expected Excess Treasury Returns (Part 2)</h3>
+<p><img src="cmd_chartpack_files/figure-html/expretpredlevel2x-1.png" width="1104" /></p>
+</div>
+<div id="yr-treasury-yield-decomposition" class="section level3 unnumbered">
+<h3 class="unnumbered">10-yr Treasury Yield Decomposition</h3>
+<p><img src="cmd_chartpack_files/figure-html/termdecomp1-1.png" width="1104" /></p>
+</div>
+<div id="yr-treasury-yield-decomposition-1" class="section level3 unnumbered">
+<h3 class="unnumbered">2-yr Treasury Yield Decomposition</h3>
+<p><img src="cmd_chartpack_files/figure-html/termdecomp2yr-1.png" width="1104" /></p>
+</div>
+<div id="yr-treasury-yield-decomposition-2" class="section level3 unnumbered">
+<h3 class="unnumbered">5-yr Treasury Yield Decomposition</h3>
+<p><img src="cmd_chartpack_files/figure-html/termdecomp5yr-1.png" width="1104" /></p>
+</div>
+<div id="return-on-break-even-inflation-actual-vs.-expected" class="section level3 unnumbered">
+<h3 class="unnumbered">Return on Break-even Inflation: Actual vs. Expected</h3>
+<p><img src="cmd_chartpack_files/figure-html/irpA-1.png" width="1104" /></p>
+</div>
+<div id="return-on-real-yields-actual-vs.-expected" class="section level3 unnumbered">
+<h3 class="unnumbered">Return on Real yields: Actual vs. Expected</h3>
+<p><img src="cmd_chartpack_files/figure-html/rbrpA-1.png" width="1104" /></p>
+</div>
+<div id="ism-and-treasury-10-yr-risk-premium-1992-" class="section level3 unnumbered">
+<h3 class="unnumbered">ISM and Treasury 10-yr Risk Premium: 1992-</h3>
+<p><img src="cmd_chartpack_files/figure-html/ismtsy_PLOT-1.png" width="1104" /></p>
+</div>
+<div id="new-issue---seasoned-spreads" class="section level3 unnumbered">
+<h3 class="unnumbered">New Issue - Seasoned Spreads</h3>
+<p><img src="cmd_chartpack_files/figure-html/otrspreads-1.png" width="1104" /></p>
+</div>
+<div id="new-issue---seasoned-spreads-and-de-trended-short-term-inflation-expectations" class="section level3 unnumbered">
+<h3 class="unnumbered">New Issue - Seasoned Spreads and De-trended Short-term Inflation Expectations</h3>
+<p><img src="cmd_chartpack_files/figure-html/otrspreaddetrend-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="economic-data" class="section level2 unnumbered">
+<h2 class="unnumbered">Economic Data</h2>
+<div id="real-gdp-per-capita" class="section level3 unnumbered">
+<h3 class="unnumbered">Real GDP per capita</h3>
+<p><img src="cmd_chartpack_files/figure-html/ngdpcapplot-1.png" width="1104" /></p>
+</div>
+<div id="decomposition-of-10-yr-annualized-real-gdp-per-capita" class="section level3 unnumbered">
+<h3 class="unnumbered">Decomposition of 10-yr Annualized Real GDP per capita</h3>
+<p><img src="cmd_chartpack_files/figure-html/rgdp_decomp_plot-1.png" width="1104" /></p>
+</div>
+<div id="decomposition-of-10-yr-annualized-real-gdp-per-capita-1990-" class="section level3 unnumbered">
+<h3 class="unnumbered">Decomposition of 10-yr Annualized Real GDP per capita: 1990-</h3>
+<p><img src="cmd_chartpack_files/figure-html/rgdp_decomp2_plot-1.png" width="1104" /></p>
+</div>
+<div id="real-personal-income-per-capita" class="section level3 unnumbered">
+<h3 class="unnumbered">Real Personal Income per capita</h3>
+<p><img src="cmd_chartpack_files/figure-html/personalincplot-1.png" width="1104" /></p>
+</div>
+<div id="real-personal-income-ex-transfer-receipts-per-capita" class="section level3 unnumbered">
+<h3 class="unnumbered">Real Personal Income Ex Transfer Receipts per capita</h3>
+<p><img src="cmd_chartpack_files/figure-html/personalincplot2-1.png" width="1104" /></p>
+</div>
+<div id="real-personal-income-ex-transfer-receipts-per-capita-1990-to-the-present" class="section level3 unnumbered">
+<h3 class="unnumbered">Real Personal Income Ex Transfer Receipts per capita: 1990 to the present</h3>
+<p><img src="cmd_chartpack_files/figure-html/personalincplot2s-1.png" width="1104" /></p>
+</div>
+<div id="real-personal-income-per-capita-1" class="section level3 unnumbered">
+<h3 class="unnumbered">Real Personal Income per capita</h3>
+<p><img src="cmd_chartpack_files/figure-html/personalincplot3-1.png" width="1104" /></p>
+</div>
+<div id="sources-of-real-personal-income-per-capita" class="section level3 unnumbered">
+<h3 class="unnumbered">Sources of Real Personal Income per capita</h3>
+<p><img src="cmd_chartpack_files/figure-html/personalincplot3s-1.png" width="1104" /></p>
+</div>
+<div id="real-business-sales-per-capita" class="section level3 unnumbered">
+<h3 class="unnumbered">Real Business Sales per capita</h3>
+<p><img src="cmd_chartpack_files/figure-html/bsalesplot-1.png" width="1104" /></p>
+</div>
+<div id="business-inventories-to-sales-ratio" class="section level3 unnumbered">
+<h3 class="unnumbered">Business Inventories-to-Sales Ratio</h3>
+<p><img src="cmd_chartpack_files/figure-html/bus_inv_to_salesplot-1.png" width="1104" /></p>
+</div>
+<div id="real-retail-sales-per-capita" class="section level3 unnumbered">
+<h3 class="unnumbered">Real Retail Sales per capita</h3>
+<p><img src="cmd_chartpack_files/figure-html/rsalesplot-1.png" width="1104" /></p>
+</div>
+<div id="real-retail-sales-per-capita-1990-to-the-present" class="section level3 unnumbered">
+<h3 class="unnumbered">Real Retail Sales per capita: 1990 to the present</h3>
+<p><img src="cmd_chartpack_files/figure-html/rsalesplot2-1.png" width="1104" /></p>
+</div>
+<div id="real-new-orders-for-durable-goods-per-capita" class="section level3 unnumbered">
+<h3 class="unnumbered">Real New Orders for Durable Goods per capita</h3>
+<p><img src="cmd_chartpack_files/figure-html/figurenodur-1.png" width="1104" /></p>
+</div>
+<div id="real-new-orders-for-durable-goods-per-capita-1990-to-the-present" class="section level3 unnumbered">
+<h3 class="unnumbered">Real New Orders for Durable Goods per capita: 1990 to the present</h3>
+<p><img src="cmd_chartpack_files/figure-html/figurenodur2-1.png" width="1104" /></p>
+</div>
+<div id="consumer-credit-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Consumer Credit-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/ed2-1.png" width="1104" /></p>
+</div>
+<div id="inflation-and-federal-funds-rate" class="section level3 unnumbered">
+<h3 class="unnumbered">Inflation and Federal Funds Rate</h3>
+<p><img src="cmd_chartpack_files/figure-html/fin_rep-1.png" width="1104" /></p>
+</div>
+<div id="inflation-and-federal-funds-rate-1990-to-the-present" class="section level3 unnumbered">
+<h3 class="unnumbered">Inflation and Federal Funds Rate: 1990 to the present</h3>
+<p><img src="cmd_chartpack_files/figure-html/fin_repshort-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="labor-markets" class="section level2 unnumbered">
+<h2 class="unnumbered">Labor Markets</h2>
+<div id="unemployment-rate" class="section level3 unnumbered">
+<h3 class="unnumbered">Unemployment Rate</h3>
+<p><img src="cmd_chartpack_files/figure-html/urates-1.png" width="1104" /></p>
+</div>
+<div id="job-finding-and-quits-rate" class="section level3 unnumbered">
+<h3 class="unnumbered">Job-finding and Quits Rate</h3>
+<p><img src="cmd_chartpack_files/figure-html/ed9-1.png" width="1104" /></p>
+</div>
+<div id="quits-rate" class="section level3 unnumbered">
+<h3 class="unnumbered">Quits Rate</h3>
+<p><img src="cmd_chartpack_files/figure-html/ed10-1.png" width="1104" /></p>
+</div>
+<div id="labor-demand-and-wage-growth-1909---1949" class="section level3 unnumbered">
+<h3 class="unnumbered">Labor Demand and Wage Growth: 1909 - 1949</h3>
+<p><img src="cmd_chartpack_files/figure-html/ed11-1.png" width="1104" /></p>
+</div>
+<div id="labor-demand-and-wage-growth-1950---1986" class="section level3 unnumbered">
+<h3 class="unnumbered">Labor Demand and Wage Growth: 1950 - 1986</h3>
+<p><img src="cmd_chartpack_files/figure-html/ed12-1.png" width="1104" /></p>
+</div>
+<div id="labor-demand-and-wage-growth-1984-" class="section level3 unnumbered">
+<h3 class="unnumbered">Labor Demand and Wage Growth: 1984-</h3>
+<p><img src="cmd_chartpack_files/figure-html/labordemandpt3-1.png" width="1104" /></p>
+</div>
+<div id="labor-flow-rates" class="section level3 unnumbered">
+<h3 class="unnumbered">Labor Flow Rates</h3>
+<p><img src="cmd_chartpack_files/figure-html/laborflowrates-1.png" width="1104" /></p>
+</div>
+<div id="job-openings" class="section level3 unnumbered">
+<h3 class="unnumbered">Job Openings</h3>
+<p><img src="cmd_chartpack_files/figure-html/ed15-1.png" width="1104" /></p>
+</div>
+<div id="log-job-openings-to-unemployment-ratio" class="section level3 unnumbered">
+<h3 class="unnumbered">Log Job Openings-to-Unemployment Ratio</h3>
+<p><img src="cmd_chartpack_files/figure-html/ed13-1.png" width="1104" /></p>
+</div>
+<div id="job-openings-to-unemployment-ratio" class="section level3 unnumbered">
+<h3 class="unnumbered">Job Openings-to-Unemployment Ratio</h3>
+<p><img src="cmd_chartpack_files/figure-html/vu2-1.png" width="1104" /></p>
+</div>
+<div id="labor-demand-quit-rate-and-vacancy-unemployment-ratio" class="section level3 unnumbered">
+<h3 class="unnumbered">Labor Demand: Quit Rate and Vacancy-Unemployment Ratio</h3>
+<p><img src="cmd_chartpack_files/figure-html/ed14-1.png" width="1104" /></p>
+</div>
+<div id="ism-new-orders-and-the-job-finding-rate" class="section level3 unnumbered">
+<h3 class="unnumbered">ISM New Orders and The Job-finding Rate</h3>
+<p><img src="cmd_chartpack_files/figure-html/jfandno-1.png" width="1104" /></p>
+</div>
+<div id="the-unemployment-rate-gap" class="section level3 unnumbered">
+<h3 class="unnumbered">The Unemployment Rate Gap</h3>
+<p><img src="cmd_chartpack_files/figure-html/urgap-1.png" width="1104" /></p>
+</div>
+<div id="the-unemployment-rate-gap-1993-" class="section level3 unnumbered">
+<h3 class="unnumbered">The Unemployment Rate Gap: 1993-</h3>
+<p><img src="cmd_chartpack_files/figure-html/urgap2-1.png" width="1104" /></p>
+</div>
+<div id="employment-to-population-ratio" class="section level3 unnumbered">
+<h3 class="unnumbered">Employment-to-Population Ratio</h3>
+<p><img src="cmd_chartpack_files/figure-html/epopgap-1.png" width="1104" /></p>
+</div>
+<div id="employment-to-population-ratio-gap" class="section level3 unnumbered">
+<h3 class="unnumbered">Employment-to-Population Ratio Gap</h3>
+<p><img src="cmd_chartpack_files/figure-html/epopgap2-1.png" width="1104" /></p>
+</div>
+<div id="labor-force-participation-rate-gap" class="section level3 unnumbered">
+<h3 class="unnumbered">Labor-Force Participation Rate Gap</h3>
+<p><img src="cmd_chartpack_files/figure-html/lfprgap-1.png" width="1104" /></p>
+</div>
+<div id="labor-force-participation-rate-flows-vs.-stocks" class="section level3 unnumbered">
+<h3 class="unnumbered">Labor-Force Participation Rate: Flows vs. Stocks</h3>
+<p><img src="cmd_chartpack_files/figure-html/lfprgap2-1.png" width="1104" /></p>
+</div>
+<div id="initial-claims-for-unemployment-insurance" class="section level3 unnumbered">
+<h3 class="unnumbered">Initial Claims for Unemployment Insurance</h3>
+<p><img src="cmd_chartpack_files/figure-html/iclaims-1.png" width="1104" /></p>
+</div>
+<div id="real-labor-income" class="section level3 unnumbered">
+<h3 class="unnumbered">Real Labor Income</h3>
+<p><img src="cmd_chartpack_files/figure-html/aggwageincome-1.png" width="1104" /></p>
+</div>
+<div id="real-labor-income-yoy" class="section level3 unnumbered">
+<h3 class="unnumbered">Real Labor Income (Yoy)</h3>
+<p><img src="cmd_chartpack_files/figure-html/aggwageincomed12-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="real-estate" class="section level2 unnumbered">
+<h2 class="unnumbered">Real Estate</h2>
+<div id="real-home-price-and-commercial-real-estate-price-index" class="section level3 unnumbered">
+<h3 class="unnumbered">Real Home Price and Commercial Real Estate Price Index</h3>
+<p><img src="cmd_chartpack_files/figure-html/hpiplot-1.png" width="1104" /></p>
+</div>
+<div id="real-multifamily-price-indexes" class="section level3 unnumbered">
+<h3 class="unnumbered">Real Multifamily Price Indexes</h3>
+<p><img src="cmd_chartpack_files/figure-html/mf_plot_pi-1.png" width="1104" /></p>
+</div>
+<div id="construction-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Construction-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/resplot-1.png" width="1104" /></p>
+</div>
+<div id="real-per-capita-construction" class="section level3 unnumbered">
+<h3 class="unnumbered">Real Per Capita Construction</h3>
+<p><img src="cmd_chartpack_files/figure-html/resplot2-1.png" width="1104" /></p>
+</div>
+<div id="real-private-and-public-construction-per-capita" class="section level3 unnumbered">
+<h3 class="unnumbered">Real Private and Public Construction Per Capita</h3>
+<p><img src="cmd_chartpack_files/figure-html/resplot3-1.png" width="1104" /></p>
+</div>
+<div id="real-construction-per-capita" class="section level3 unnumbered">
+<h3 class="unnumbered">Real Construction Per Capita</h3>
+<p><img src="cmd_chartpack_files/figure-html/resplot4-1.png" width="1104" /></p>
+</div>
+<div id="real-residential-construction-per-capita-and-real-home-prices" class="section level3 unnumbered">
+<h3 class="unnumbered">Real Residential Construction Per Capita and Real Home Prices</h3>
+<p><img src="cmd_chartpack_files/figure-html/resplot6-1.png" width="1104" /></p>
+</div>
+<div id="real-highway-and-street-construction-per-capita" class="section level3 unnumbered">
+<h3 class="unnumbered">Real Highway and Street Construction Per Capita</h3>
+<p><img src="cmd_chartpack_files/figure-html/resplot5-1.png" width="1104" /></p>
+</div>
+<div id="real-office-construction-per-capita" class="section level3 unnumbered">
+<h3 class="unnumbered">Real Office Construction Per Capita</h3>
+<p><img src="cmd_chartpack_files/figure-html/resplotoffice-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-new-privately-owned-housing-units-summary" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. New Privately-Owned Housing Units: Summary</h3>
+<p><img src="cmd_chartpack_files/figure-html/resconstructA1-1.png" width="1104" /></p>
+</div>
+<div id="new-privately-owned-housing-single-family-units-summary" class="section level3 unnumbered">
+<h3 class="unnumbered">New Privately-Owned Housing Single Family Units: Summary</h3>
+<p><img src="cmd_chartpack_files/figure-html/resconstructoneunit-1.png" width="1104" /></p>
+</div>
+<div id="new-privately-owned-housing-multifamily-units-summary" class="section level3 unnumbered">
+<h3 class="unnumbered">New Privately-Owned Housing Multifamily Units: Summary</h3>
+<p><img src="cmd_chartpack_files/figure-html/resconstructmf-1.png" width="1104" /></p>
+</div>
+<div id="new-privately-owned-housing-units-under-construction" class="section level3 unnumbered">
+<h3 class="unnumbered">New Privately-Owned Housing Units Under Construction</h3>
+<p><img src="cmd_chartpack_files/figure-html/underconstruct-1.png" width="1104" /></p>
+</div>
+<div id="monthly-supply-of-houses-in-the-united-states" class="section level3 unnumbered">
+<h3 class="unnumbered">Monthly Supply of Houses in the United States</h3>
+<p><img src="cmd_chartpack_files/figure-html/monthssupplynew-1.png" width="1104" /></p>
+</div>
+<div id="the-expected-return-on-new-single-family-housing-and-real-home-prices" class="section level3 unnumbered">
+<h3 class="unnumbered">The Expected Return on New Single-family Housing and Real Home Prices</h3>
+<p><img src="cmd_chartpack_files/figure-html/expretnewhousing-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="reits" class="section level2 unnumbered">
+<h2 class="unnumbered">REITS</h2>
+<div id="dividend-yield" class="section level3 unnumbered">
+<h3 class="unnumbered">Dividend Yield</h3>
+<p><img src="cmd_chartpack_files/figure-html/reits_dividend_yield_plot-1.png" width="1104" /></p>
+</div>
+<div id="real-dividend-yields" class="section level3 unnumbered">
+<h3 class="unnumbered">Real Dividend Yields</h3>
+<p><img src="cmd_chartpack_files/figure-html/reits_real_dividend_yield_plot-1.png" width="1104" /></p>
+</div>
+<div id="real-return-index" class="section level3 unnumbered">
+<h3 class="unnumbered">Real Return Index</h3>
+<p><img src="cmd_chartpack_files/figure-html/reits_index_plot-1.png" width="1104" /></p>
+</div>
+<div id="income-return" class="section level3 unnumbered">
+<h3 class="unnumbered">Income Return</h3>
+<p><img src="cmd_chartpack_files/figure-html/reits_income_return_plot-1.png" width="1104" /></p>
+</div>
+<div id="price-return" class="section level3 unnumbered">
+<h3 class="unnumbered">Price Return</h3>
+<p><img src="cmd_chartpack_files/figure-html/reits_price_return_plot-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="transportation" class="section level2 unnumbered">
+<h2 class="unnumbered">Transportation</h2>
+<div id="public-transit-ridership" class="section level3 unnumbered">
+<h3 class="unnumbered">Public Transit Ridership</h3>
+<p><img src="cmd_chartpack_files/figure-html/transport_plot1-1.png" width="1104" /></p>
+</div>
+<div id="transportation-summary" class="section level3 unnumbered">
+<h3 class="unnumbered">Transportation Summary</h3>
+<p><img src="cmd_chartpack_files/figure-html/transport_plot1a-1.png" width="1104" /></p>
+</div>
+<div id="transportation-quantity-summary" class="section level3 unnumbered">
+<h3 class="unnumbered">Transportation Quantity Summary</h3>
+<p><img src="cmd_chartpack_files/figure-html/transport_plot1b-1.png" width="1104" /></p>
+</div>
+<div id="transportation-summary-nominal-expenditures" class="section level3 unnumbered">
+<h3 class="unnumbered">Transportation Summary: Nominal Expenditures</h3>
+<p><img src="cmd_chartpack_files/figure-html/transport_plot1c-1.png" width="1104" /></p>
+</div>
+<div id="transportation-summary-real-personal-expenditures" class="section level3 unnumbered">
+<h3 class="unnumbered">Transportation Summary: Real Personal Expenditures</h3>
+<p><img src="cmd_chartpack_files/figure-html/transport_plot1d-1.png" width="1104" /></p>
+</div>
+<div id="transportation-summary-real-price-indexes" class="section level3 unnumbered">
+<h3 class="unnumbered">Transportation Summary: Real Price Indexes</h3>
+<p><img src="cmd_chartpack_files/figure-html/transport_plot1e-1.png" width="1104" /></p>
+</div>
+<div id="air-passenger-revenue-miles" class="section level3 unnumbered">
+<h3 class="unnumbered">Air Passenger Revenue Miles</h3>
+<p><img src="cmd_chartpack_files/figure-html/transport_plot2-1.png" width="1104" /></p>
+</div>
+<div id="air-freight-ton-miles" class="section level3 unnumbered">
+<h3 class="unnumbered">Air Freight Ton-Miles</h3>
+<p><img src="cmd_chartpack_files/figure-html/transport_plot3-1.png" width="1104" /></p>
+</div>
+<div id="air-carrier-revenue-ton-miles" class="section level3 unnumbered">
+<h3 class="unnumbered">Air Carrier Revenue Ton-Miles</h3>
+<p><img src="cmd_chartpack_files/figure-html/transport_plot4-1.png" width="1104" /></p>
+</div>
+<div id="total-air-revenue-ton-miles" class="section level3 unnumbered">
+<h3 class="unnumbered">Total Air Revenue Ton-Miles</h3>
+<p><img src="cmd_chartpack_files/figure-html/transport_plot5-1.png" width="1104" /></p>
+</div>
+<div id="international-travel" class="section level3 unnumbered">
+<h3 class="unnumbered">International Travel</h3>
+<p><img src="cmd_chartpack_files/figure-html/transport_plot6-1.png" width="1104" /></p>
+</div>
+<div id="international-travel-quantity-indexes" class="section level3 unnumbered">
+<h3 class="unnumbered">International Travel: Quantity Indexes</h3>
+<p><img src="cmd_chartpack_files/figure-html/transport_plot6a-1.png" width="1104" /></p>
+</div>
+<div id="passenger-fares-for-foreign-travel-quantity-index" class="section level3 unnumbered">
+<h3 class="unnumbered">Passenger Fares for Foreign Travel: Quantity Index</h3>
+<p><img src="cmd_chartpack_files/figure-html/transport_plot6b-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-hotel-occupancy" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Hotel Occupancy</h3>
+<p><img src="cmd_chartpack_files/figure-html/transport_plot7-1.png" width="1104" /></p>
+</div>
+<div id="hotels-and-motels-quantity-indexes" class="section level3 unnumbered">
+<h3 class="unnumbered">Hotels and Motels: Quantity Indexes</h3>
+<p><img src="cmd_chartpack_files/figure-html/transport_plot7a-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-restaurant-sales" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Restaurant Sales</h3>
+<p><img src="cmd_chartpack_files/figure-html/transport_plot8-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-national-park-visitors" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. National Park Visitors</h3>
+<p><img src="cmd_chartpack_files/figure-html/transport_plot9-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-national-park-visitors-per-capita---logs" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. National Park Visitors Per Capita - logs</h3>
+<p><img src="cmd_chartpack_files/figure-html/transport_plot9a-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-national-park-visitors-per-capita" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. National Park Visitors Per Capita</h3>
+<p><img src="cmd_chartpack_files/figure-html/transport_plot9b-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-real-hotel-construction-revenue-and-stock-prices" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Real Hotel Construction, Revenue, and Stock Prices</h3>
+<p><img src="cmd_chartpack_files/figure-html/transport_plot10-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="autos" class="section level2 unnumbered">
+<h2 class="unnumbered">Autos</h2>
+<div id="u.s.-passenger-auto-summary" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Passenger Auto Summary</h3>
+<p><img src="cmd_chartpack_files/figure-html/auto_plot1-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-passenger-auto-trade" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Passenger Auto Trade</h3>
+<p><img src="cmd_chartpack_files/figure-html/auto_plot2-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-passenger-auto-inventory-change" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Passenger Auto Inventory Change</h3>
+<p><img src="cmd_chartpack_files/figure-html/auto_plot3-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-passenger-auto-inventories" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Passenger Auto Inventories</h3>
+<p><img src="cmd_chartpack_files/figure-html/auto_plot4-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-passenger-auto-inventory-to-sales-ratio" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Passenger Auto Inventory-to-Sales Ratio</h3>
+<p><img src="cmd_chartpack_files/figure-html/auto_plot5-1.png" width="1104" /></p>
+</div>
+<div id="passenger-autos-average-prices" class="section level3 unnumbered">
+<h3 class="unnumbered">Passenger Autos: Average Prices</h3>
+<p><img src="cmd_chartpack_files/figure-html/auto_plot6-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-trade-in-motor-vehicles-for-the-transport-of-persons" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Trade In Motor Vehicles For The Transport of Persons</h3>
+<p><img src="cmd_chartpack_files/figure-html/auto_plot7-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-trade-in-motor-vehicles-for-the-transport-of-goods" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Trade In Motor Vehicles For The Transport of Goods</h3>
+<p><img src="cmd_chartpack_files/figure-html/auto_plot8-1.png" width="1104" /></p>
+</div>
+<div id="total-vehicle-sales" class="section level3 unnumbered">
+<h3 class="unnumbered">Total Vehicle Sales</h3>
+<p><img src="cmd_chartpack_files/figure-html/autosales_fig1-1.png" width="1104" /></p>
+</div>
+<div id="total-vehicle-sales-per-capita" class="section level3 unnumbered">
+<h3 class="unnumbered">Total Vehicle Sales per capita</h3>
+<p><img src="cmd_chartpack_files/figure-html/autosalespercap-1.png" width="1104" /></p>
+</div>
+<div id="passenger-and-truck-sales-per-capita" class="section level3 unnumbered">
+<h3 class="unnumbered">Passenger and Truck Sales per capita</h3>
+<p><img src="cmd_chartpack_files/figure-html/autosalespercap2-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-motor-vehicle-production" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Motor Vehicle Production</h3>
+<p><img src="cmd_chartpack_files/figure-html/autoprodfig-1.png" width="1104" /></p>
+</div>
+<div id="motor-vehicle-production-per-1000-residents" class="section level3 unnumbered">
+<h3 class="unnumbered">Motor Vehicle Production per 1000 Residents</h3>
+<p><img src="cmd_chartpack_files/figure-html/autosalesfordom-1.png" width="1104" /></p>
+</div>
+<div id="auto-credit-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Auto Credit-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/ed3-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-auto-and-truck-equities-valuation-ratios" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Auto and Truck Equities Valuation Ratios</h3>
+<p><img src="cmd_chartpack_files/figure-html/auto_plot_stocks-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="commodity-prices" class="section level2" number="0.1">
+<h2 number="0.1"><span class="header-section-number">0.1</span> Commodity Prices</h2>
+<div id="core-inflation-factor" class="section level3 unnumbered">
+<h3 class="unnumbered">Core Inflation Factor</h3>
+<p><img src="cmd_chartpack_files/figure-html/coreinffactorplot-1.png" width="1104" /></p>
+</div>
+<div id="baa-10yr-spread-and-ism-prices-index" class="section level3 unnumbered">
+<h3 class="unnumbered">BAA-10yr Spread and ISM Prices Index</h3>
+<p><img src="cmd_chartpack_files/figure-html/ismpricesplot-1.png" width="1104" /></p>
+</div>
+<div id="real-copper-price" class="section level3 unnumbered">
+<h3 class="unnumbered">Real Copper Price</h3>
+<p><img src="cmd_chartpack_files/figure-html/ed4-1.png" width="1104" /></p>
+</div>
+<div id="real-wheat-price" class="section level3 unnumbered">
+<h3 class="unnumbered">Real Wheat Price</h3>
+<p><img src="cmd_chartpack_files/figure-html/ed5-1.png" width="1104" /></p>
+</div>
+<div id="real-farm-product-prices" class="section level3 unnumbered">
+<h3 class="unnumbered">Real Farm Product Prices</h3>
+<p><img src="cmd_chartpack_files/figure-html/com3-1.png" width="1104" /></p>
+</div>
+<div id="real-fuel-prices" class="section level3 unnumbered">
+<h3 class="unnumbered">Real Fuel Prices</h3>
+<p><img src="cmd_chartpack_files/figure-html/com4-1.png" width="1104" /></p>
+</div>
+<div id="real-scrap-steel-and-iron-price-index" class="section level3 unnumbered">
+<h3 class="unnumbered">Real Scrap Steel and Iron Price Index</h3>
+<p><img src="cmd_chartpack_files/figure-html/com5-1.png" width="1104" /></p>
+</div>
+<div id="real-oil-price" class="section level3 unnumbered">
+<h3 class="unnumbered">Real Oil Price</h3>
+<p><img src="cmd_chartpack_files/figure-html/ed6-1.png" width="1104" /></p>
+</div>
+<div id="real-textile-price-index" class="section level3 unnumbered">
+<h3 class="unnumbered">Real Textile Price Index</h3>
+<p><img src="cmd_chartpack_files/figure-html/commtext-1.png" width="1104" /></p>
+</div>
+<div id="real-lumber-price-index" class="section level3 unnumbered">
+<h3 class="unnumbered">Real Lumber Price Index</h3>
+<p><img src="cmd_chartpack_files/figure-html/commlumber-1.png" width="1104" /></p>
+</div>
+<div id="real-meat-price-index" class="section level3 unnumbered">
+<h3 class="unnumbered">Real Meat Price Index</h3>
+<p><img src="cmd_chartpack_files/figure-html/commMeat-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="meat" class="section level2 unnumbered">
+<h2 class="unnumbered">Meat</h2>
+<div id="u.s.-red-meat-summary" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Red-Meat Summary</h3>
+<p><img src="cmd_chartpack_files/figure-html/meatsum-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-beef-veal-summary" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Beef &amp; Veal Summary</h3>
+<p><img src="cmd_chartpack_files/figure-html/meatcons-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-pork-summary" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Pork Summary</h3>
+<p><img src="cmd_chartpack_files/figure-html/porksumm-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-beef-veal-and-pork-consumption" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Beef &amp; Veal and Pork Consumption</h3>
+<p><img src="cmd_chartpack_files/figure-html/meatcons2-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-red-meat-production" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Red Meat Production</h3>
+<p><img src="cmd_chartpack_files/figure-html/meatprod-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-red-meat-stocks" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Red Meat Stocks</h3>
+<p><img src="cmd_chartpack_files/figure-html/meatstocks-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-meat-trade" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Meat Trade</h3>
+<p><img src="cmd_chartpack_files/figure-html/meatrade-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="copper" class="section level2 unnumbered">
+<h2 class="unnumbered">Copper</h2>
+<div id="u.s.-refined-copper-summary" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Refined Copper Summary</h3>
+<p><img src="cmd_chartpack_files/figure-html/Copper_plotsA-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-real-copper-price-vs.-consumption-to-stocks-ratio" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Real Copper Price vs. Consumption-to-Stocks Ratio</h3>
+<p><img src="cmd_chartpack_files/figure-html/Copper_plotsB-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-copper-production" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Copper Production</h3>
+<p><img src="cmd_chartpack_files/figure-html/Copper_plotsC-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-refined-copper-stocks-and-consumption" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Refined Copper Stocks and Consumption</h3>
+<p><img src="cmd_chartpack_files/figure-html/Copper_plotsD-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="iron-and-steel" class="section level2 unnumbered">
+<h2 class="unnumbered">Iron and Steel</h2>
+<div id="u.s.-iron-and-steel-scrap-summary" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Iron and Steel Scrap Summary</h3>
+<p><img src="cmd_chartpack_files/figure-html/iron_plotsA-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-real-iron-and-steel-scrap-price-vs.-consumption-to-stocks-ratio" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Real Iron and Steel Scrap Price vs. Consumption-to-Stocks Ratio</h3>
+<p><img src="cmd_chartpack_files/figure-html/iron_plotsB-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-pig-iron-summary" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Pig Iron Summary</h3>
+<p><img src="cmd_chartpack_files/figure-html/iron_plotsC-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-raw-steel-production" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Raw Steel Production</h3>
+<p><img src="cmd_chartpack_files/figure-html/iron_plotsD-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="energy" class="section level2 unnumbered">
+<h2 class="unnumbered">Energy</h2>
+<div id="u.s.-electricity-revenue-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Electricity Revenue-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/electric1-1.png" width="1104" /></p>
+</div>
+<div id="electricity-kw-hour" class="section level3 unnumbered">
+<h3 class="unnumbered">Electricity: $kw hour</h3>
+<p><img src="cmd_chartpack_files/figure-html/electric2-1.png" width="1104" /></p>
+</div>
+<div id="electricity-net-generation-of-the-electric-power-sector" class="section level3 unnumbered">
+<h3 class="unnumbered">Electricity Net Generation of The Electric Power Sector</h3>
+<p><img src="cmd_chartpack_files/figure-html/electric3-1.png" width="1104" /></p>
+</div>
+<div id="electricity-real-revenue-per-capita" class="section level3 unnumbered">
+<h3 class="unnumbered">Electricity: Real Revenue per capita</h3>
+<p><img src="cmd_chartpack_files/figure-html/electric4-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-refinery-operations" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Refinery Operations</h3>
+<p><img src="cmd_chartpack_files/figure-html/oil2-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-domestic-crude-oil-consumption-to-domestic-stocks-and-the-real-oil-price" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Domestic Crude Oil Consumption-to-Domestic Stocks and The Real Oil Price</h3>
+<p><img src="cmd_chartpack_files/figure-html/oil4-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-retail-gasoline-station-sales-to-personal-income" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Retail Gasoline Station Sales-to-Personal Income</h3>
+<p><img src="cmd_chartpack_files/figure-html/oil5-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-petroleum-and-products-summary" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Petroleum and Products Summary</h3>
+<p><img src="cmd_chartpack_files/figure-html/fuelssumm-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-real-gasoline-distillate-and-residual-fuel-oil-prices" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Real Gasoline, Distillate and Residual Fuel Oil Prices</h3>
+<p><img src="cmd_chartpack_files/figure-html/gasprices-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-petroleum-and-products-production" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Petroleum and Products Production</h3>
+<p><img src="cmd_chartpack_files/figure-html/fuelprodplot-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-petroleum-and-product-consumption-per-capita" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Petroleum and Product Consumption per capita</h3>
+<p><img src="cmd_chartpack_files/figure-html/fuelconsplot-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-petroleum-and-product-stocks-per-capita" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Petroleum and Product Stocks per capita</h3>
+<p><img src="cmd_chartpack_files/figure-html/fuelstocksplot-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-coal-summary" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Coal Summary</h3>
+<p><img src="cmd_chartpack_files/figure-html/coalsummary-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-coal-trade" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Coal Trade</h3>
+<p><img src="cmd_chartpack_files/figure-html/coaltrade-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-coal-consumption-and-production" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Coal Consumption and Production</h3>
+<p><img src="cmd_chartpack_files/figure-html/coalprod-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="tobacco" class="section level2 unnumbered">
+<h2 class="unnumbered">Tobacco</h2>
+<div id="u.s.-cigarette-summary" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Cigarette Summary</h3>
+<p><img src="cmd_chartpack_files/figure-html/tobac_cigarette_summary_plot1-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-cigarette-summary-imports-exports-and-tax-exempt-removals" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Cigarette Summary: Imports, Exports, and Tax-Exempt Removals</h3>
+<p><img src="cmd_chartpack_files/figure-html/tobac_cigarette_summary_plot2-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-small-cigars-summary" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Small Cigars Summary</h3>
+<p><img src="cmd_chartpack_files/figure-html/tobac_small_cigars_summary_plot1-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-small-cigars-summary-imports-exports-and-tax-exempt-removals-for-consumption" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Small Cigars Summary: Imports, Exports, and Tax-Exempt Removals For Consumption</h3>
+<p><img src="cmd_chartpack_files/figure-html/tobac_small_cigars_summary_plot2-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-large-cigars-summary" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Large Cigars Summary</h3>
+<p><img src="cmd_chartpack_files/figure-html/tobac_large_cigars_summary_plot1-1.png" width="1104" /></p>
+</div>
+<div id="premium-cigar-imports" class="section level3 unnumbered">
+<h3 class="unnumbered">Premium Cigar Imports</h3>
+<p><img src="cmd_chartpack_files/figure-html/tobac_large_cigars_summary_plot2-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="vitality" class="section level2 unnumbered">
+<h2 class="unnumbered">Vitality</h2>
+<div id="u.s.-marriages" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Marriages</h3>
+<p><img src="cmd_chartpack_files/figure-html/marriage_fig-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-marriages-and-housing-starts" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Marriages and Housing Starts</h3>
+<p><img src="cmd_chartpack_files/figure-html/marriage_fig2-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-live-birth-and-death-rates" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Live Birth and Death Rates</h3>
+<p><img src="cmd_chartpack_files/figure-html/deaths_fig1-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-fertility-rate" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Fertility Rate</h3>
+<p><img src="cmd_chartpack_files/figure-html/fertility_fig1-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="world-bond-yields" class="section level2 unnumbered">
+<h2 class="unnumbered">World Bond Yields</h2>
+<p><img src="cmd_chartpack_files/figure-html/wldltratesplot-1.png" width="1104" /></p>
+<p><img src="cmd_chartpack_files/figure-html/wldltratesplot2-1.png" width="1104" /></p>
+<p><img src="cmd_chartpack_files/figure-html/wldltratesplot3-1.png" width="1104" /></p>
+<p><img src="cmd_chartpack_files/figure-html/wldltratesplot4-1.png" width="1104" /></p>
+</div>
+<div id="global-inflation-and-rates" class="section level2 unnumbered">
+<h2 class="unnumbered">Global Inflation and Rates</h2>
+<div id="world-inflation" class="section level3 unnumbered">
+<h3 class="unnumbered">World Inflation</h3>
+<p><img src="C:/Users/sabol/Google%20Drive/blogposts/wld_inf_plot_bis.jpg" width="95%" /></p>
+</div>
+<div id="europe" class="section level3 unnumbered">
+<h3 class="unnumbered">Europe</h3>
+<p><img src="C:/Users/sabol/Google%20Drive/blogposts/eur_inf_plot_bis.jpg" width="95%" /></p>
+</div>
+<div id="asia" class="section level3 unnumbered">
+<h3 class="unnumbered">Asia</h3>
+<p><img src="C:/Users/sabol/Google%20Drive/blogposts/asia_inf_plot_bis.jpg" width="95%" /></p>
+</div>
+<div id="global-long-term-bond-yields-and-inflation" class="section level3 unnumbered">
+<h3 class="unnumbered">Global Long-term Bond Yields and Inflation</h3>
+<p><img src="cmd_chartpack_files/figure-html/wld_lt_rates_and_inf-1.png" width="1104" /></p>
+</div>
+<div id="sweden" class="section level3 unnumbered">
+<h3 class="unnumbered">Sweden</h3>
+<p><img src="cmd_chartpack_files/figure-html/swe_lt_rates_and_inf_pt1-1.png" width="1104" /></p>
+</div>
+<div id="france" class="section level3 unnumbered">
+<h3 class="unnumbered">France</h3>
+<p><img src="cmd_chartpack_files/figure-html/fra_lt_rates_and_inf_pt1-1.png" width="1104" /></p>
+</div>
+<div id="japan" class="section level3 unnumbered">
+<h3 class="unnumbered">Japan</h3>
+<p><img src="cmd_chartpack_files/figure-html/jpn_lt_rates_and_inf_pt1-1.png" width="1104" /></p>
+</div>
+<div id="italy" class="section level3 unnumbered">
+<h3 class="unnumbered">Italy</h3>
+<p><img src="cmd_chartpack_files/figure-html/ita_lt_rates_and_inf_pt1-1.png" width="1104" /></p>
+</div>
+<div id="germany" class="section level3 unnumbered">
+<h3 class="unnumbered">Germany</h3>
+<p><img src="cmd_chartpack_files/figure-html/ger_lt_rates_and_inf_pt1-1.png" width="1104" /></p>
+</div>
+<div id="australia" class="section level3 unnumbered">
+<h3 class="unnumbered">Australia</h3>
+<p><img src="cmd_chartpack_files/figure-html/aus_lt_rates_and_inf_pt1-1.png" width="1104" /></p>
+</div>
+<div id="united-kingdom" class="section level3 unnumbered">
+<h3 class="unnumbered">United Kingdom</h3>
+<p><img src="cmd_chartpack_files/figure-html/gbr_lt_rates_and_inf_pt1-1.png" width="1104" /></p>
+</div>
+<div id="south-africa" class="section level3 unnumbered">
+<h3 class="unnumbered">South Africa</h3>
+<p><img src="cmd_chartpack_files/figure-html/zarlt_rates_and_inf_pt1-1.png" width="1104" /></p>
+</div>
+<div id="norway" class="section level3 unnumbered">
+<h3 class="unnumbered">Norway</h3>
+<p><img src="cmd_chartpack_files/figure-html/nor_lt_rates_and_inf_pt1-1.png" width="1104" /></p>
+</div>
+<div id="new-zealand" class="section level3 unnumbered">
+<h3 class="unnumbered">New Zealand</h3>
+<p><img src="cmd_chartpack_files/figure-html/nzl_lt_rates_and_inf_pt1-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="european-capital-markets" class="section level2 unnumbered">
+<h2 class="unnumbered">European Capital Markets</h2>
+<div id="european-gross-debt-issuance-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">European Gross Debt Issuance-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/eur_gross_debt_iss_plot-1.png" width="1104" /></p>
+</div>
+<div id="german-capital-market-outstandings-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">German Capital Market Outstandings-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/ger_out_plot-1.png" width="1104" /></p>
+</div>
+<div id="german-capital-market-issuance-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">German Capital Market Issuance-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/ger_iss_plot-1.png" width="1104" /></p>
+</div>
+<div id="german-net-capital-market-issuance-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">German Net Capital Market Issuance-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/ger_net_iss_plot-1.png" width="1104" /></p>
+</div>
+<div id="german-net-long-term-capital-market-issuance-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">German Net Long-Term Capital Market Issuance-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/ger_net_lt_iss_plot-1.png" width="1104" /></p>
+</div>
+<div id="france-capital-market-outstandings-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">France Capital Market Outstandings-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/fra_out_plot-1.png" width="1104" /></p>
+</div>
+<div id="france-capital-market-issuance-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">France Capital Market Issuance-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/fra_iss_plot-1.png" width="1104" /></p>
+</div>
+<div id="france-net-capital-market-issuance-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">France Net Capital Market Issuance-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/fra_net_iss_plot-1.png" width="1104" /></p>
+</div>
+<div id="france-net-long-term-capital-market-issuance-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">France Net Long-Term Capital Market Issuance-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/fra_net_lt_iss_plot-1.png" width="1104" /></p>
+</div>
+<div id="italy-capital-market-outstandings-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Italy Capital Market Outstandings-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/ita_out_plot-1.png" width="1104" /></p>
+</div>
+<div id="italy-capital-market-issuance-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Italy Capital Market Issuance-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/ita_iss_plot-1.png" width="1104" /></p>
+</div>
+<div id="italy-net-capital-market-issuance-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Italy Net Capital Market Issuance-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/ita_net_iss_plot-1.png" width="1104" /></p>
+</div>
+<div id="italy-net-long-term-capital-market-issuance-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Italy Net Long-Term Capital Market Issuance-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/ita_net_lt_iss_plot-1.png" width="1104" /></p>
+</div>
+<div id="spain-capital-market-outstandings-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Spain Capital Market Outstandings-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/esp_out_plot-1.png" width="1104" /></p>
+</div>
+<div id="spain-capital-market-issuance-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Spain Capital Market Issuance-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/esp_iss_plot-1.png" width="1104" /></p>
+</div>
+<div id="spain-net-capital-market-issuance-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Spain Net Capital Market Issuance-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/esp_net_iss_plot-1.png" width="1104" /> ### {-} <img src="cmd_chartpack_files/figure-html/esp_net_lt_iss_plot-1.png" width="1104" /></p>
+</div>
+<div id="europe-capital-market-outstandings-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Europe Capital Market Outstandings-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/eur_out_plot-1.png" width="1104" /></p>
+</div>
+<div id="europe-capital-market-issuance-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Europe Capital Market Issuance-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/eur_iss_plot-1.png" width="1104" /></p>
+</div>
+<div id="europe-net-capital-market-issuance-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Europe Net Capital Market Issuance-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/eur_net_iss_plot-1.png" width="1104" /></p>
+</div>
+<div id="europe-net-long-term-capital-market-issuance-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Europe Net Long-Term Capital Market Issuance-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/eur_net_lt_iss_plot-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="foreign-transactions" class="section level2 unnumbered">
+<h2 class="unnumbered">Foreign Transactions</h2>
+<p><img src="C:/Users/sabol/Google%20Drive/blogposts/wld_ustnet_frac_trans_plot.jpg" width="95%" /></p>
+<p><img src="C:/Users/sabol/Google%20Drive/blogposts/eur_ustnet_frac_trans_plot.jpg" width="95%" /></p>
+<p><img src="C:/Users/sabol/Google%20Drive/blogposts/asia_ustnet_frac_trans_plot.jpg" width="95%" /></p>
+<p><img src="C:/Users/sabol/Google%20Drive/blogposts/latam_ustnet_frac_trans_plot.jpg" width="95%" /></p>
+<p><img src="C:/Users/sabol/Google%20Drive/blogposts/wld_totalnetus_frac_iss_plot.jpg" width="95%" /></p>
+<p><img src="C:/Users/sabol/Google%20Drive/blogposts/latam_totalnetus_frac_iss_plot.jpg" width="95%" style="display: block; margin: auto;" /></p>
+<p><img src="C:/Users/sabol/Google%20Drive/blogposts/asia_totalnetus_frac_iss_plot.jpg" width="95%" style="display: block; margin: auto;" /></p>
+<p><img src="C:/Users/sabol/Google%20Drive/blogposts/eur_totalnetus_frac_iss_plot.jpg" width="95%" /></p>
+<div id="total-net-foreign-purchases-1935---1980" class="section level3 unnumbered">
+<h3 class="unnumbered">Total Net Foreign Purchases: 1935 - 1980</h3>
+<p><img src="cmd_chartpack_files/figure-html/netfrnpur_pt1-1.png" width="1104" /></p>
+</div>
+<div id="total-net-foreign-purchases-1980-" class="section level3 unnumbered">
+<h3 class="unnumbered">Total Net Foreign Purchases: 1980-</h3>
+<p><img src="cmd_chartpack_files/figure-html/fortransAAplot-1.png" width="1104" /></p>
+</div>
+<div id="foreign-net-purchases-of-us-long-term-securities" class="section level3 unnumbered">
+<h3 class="unnumbered">Foreign Net Purchases of US Long-term Securities</h3>
+<p><img src="cmd_chartpack_files/figure-html/fortrans1-1.png" width="1104" /></p>
+</div>
+<div id="foreign-net-purchases-of-us-treasury-notes-and-bonds" class="section level3 unnumbered">
+<h3 class="unnumbered">Foreign Net Purchases of US Treasury Notes and Bonds</h3>
+<p><img src="cmd_chartpack_files/figure-html/fortrans3-1.png" width="1104" /></p>
+</div>
+<div id="foreign-net-purchases-of-us-treasury-notes-and-bonds-1963---1978" class="section level3 unnumbered">
+<h3 class="unnumbered">Foreign Net Purchases of US Treasury Notes and Bonds: 1963 - 1978</h3>
+<p><img src="cmd_chartpack_files/figure-html/fortrans2-1.png" width="1104" /></p>
+</div>
+<div id="foreign-net-purchases-of-us-treasury-notes-and-bonds-1979-" class="section level3 unnumbered">
+<h3 class="unnumbered">Foreign Net Purchases of US Treasury Notes and Bonds: 1979-</h3>
+<p><img src="cmd_chartpack_files/figure-html/fortransAAustplot-1.png" width="1104" /></p>
+</div>
+<div id="foreign-net-purchases-of-domestic-equities" class="section level3 unnumbered">
+<h3 class="unnumbered">Foreign Net Purchases of Domestic Equities</h3>
+<p><img src="cmd_chartpack_files/figure-html/fortrans4-1.png" width="1104" /></p>
+</div>
+<div id="foreign-net-purchases-of-corporate-muni-and-agency-bonds" class="section level3 unnumbered">
+<h3 class="unnumbered">Foreign Net Purchases of Corporate, Muni and Agency Bonds</h3>
+<p><img src="cmd_chartpack_files/figure-html/fortrans5-1.png" width="1104" /></p>
+</div>
+<div id="foreign-net-purchases-of-domestic-bonds" class="section level3 unnumbered">
+<h3 class="unnumbered">Foreign Net Purchases of Domestic Bonds</h3>
+<p><img src="cmd_chartpack_files/figure-html/fortrans6-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-net-sales-of-foreign-securities-to-foreigners" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Net Sales of Foreign Securities to Foreigners</h3>
+<p><img src="cmd_chartpack_files/figure-html/fortrans_forstocks-1.png" width="1104" /></p>
+</div>
+<div id="foreign-net-purchases-of-treasury-bills" class="section level3 unnumbered">
+<h3 class="unnumbered">Foreign Net Purchases of Treasury Bills</h3>
+<p><img src="cmd_chartpack_files/figure-html/fortrans8-1.png" width="1104" /></p>
+</div>
+<div id="short-term-liabilities-of-u.s.-residents-held-by-foreigners" class="section level3 unnumbered">
+<h3 class="unnumbered">Short-term liabilities of U.S. residents held by foreigners</h3>
+<p><img src="cmd_chartpack_files/figure-html/fortrans9-1.png" width="1104" /></p>
+</div>
+<div id="oil-exporters-holdings-of-treasuries-and-the-real-price-of-crude-oil" class="section level3 unnumbered">
+<h3 class="unnumbered">Oil Exporters Holdings of Treasuries and The Real Price of Crude Oil</h3>
+<p><img src="cmd_chartpack_files/figure-html/oilexp1-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="trade-data" class="section level2 unnumbered">
+<h2 class="unnumbered">Trade Data</h2>
+<div id="u.s.-real-effective-exchange-rate" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Real Effective Exchange Rate</h3>
+<p><img src="cmd_chartpack_files/figure-html/realfx1-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-nominal-effective-exchange-rate" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Nominal Effective Exchange Rate</h3>
+<p><img src="cmd_chartpack_files/figure-html/nomfx1-1.png" width="1104" /></p>
+</div>
+<div id="trade-balance-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Trade Balance-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/nx3-1.png" width="1104" /></p>
+</div>
+<div id="goods-and-services-trade-balance-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Goods and Services Trade Balance-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/nx_sep-1.png" width="1104" /></p>
+</div>
+<div id="crude-petroleum-non-petroleum-trade-balance-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Crude Petroleum &amp; Non-Petroleum Trade Balance-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/oil1-1.png" width="1104" /></p>
+</div>
+<div id="commodity-trade-balance-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">Commodity Trade Balance-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/nx1-1.png" width="1104" /></p>
+</div>
+<div id="iron-and-steel-trade" class="section level3 unnumbered">
+<h3 class="unnumbered">Iron and Steel Trade</h3>
+<p><img src="cmd_chartpack_files/figure-html/nx2-1.png" width="1104" /></p>
+</div>
+<div id="aluminum-imports-and-exports" class="section level3 unnumbered">
+<h3 class="unnumbered">Aluminum Imports and Exports</h3>
+<p><img src="cmd_chartpack_files/figure-html/nx7-1.png" width="1104" /></p>
+</div>
+<div id="copper-trade" class="section level3 unnumbered">
+<h3 class="unnumbered">Copper Trade</h3>
+<p><img src="cmd_chartpack_files/figure-html/nx5-1.png" width="1104" /></p>
+</div>
+<div id="agricultural-commodities-trade" class="section level3 unnumbered">
+<h3 class="unnumbered">Agricultural Commodities Trade</h3>
+<p><img src="cmd_chartpack_files/figure-html/aggtrade-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-energy-imports-and-exports" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Energy Imports and Exports</h3>
+<p><img src="cmd_chartpack_files/figure-html/fueltrade-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="bilateral-trade" class="section level2 unnumbered">
+<h2 class="unnumbered">Bilateral Trade</h2>
+<div id="u.s.-regional-trade-balances-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Regional Trade Balances-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/tradepartners2-1.png" width="1104" /></p>
+</div>
+<div id="u.s.---asia-trade-balances-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. - Asia Trade Balances-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/tradepartners3-1.png" width="1104" /></p>
+</div>
+<div id="u.s.--european-trade-balances-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S.- European Trade Balances-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/tradepartners4-1.png" width="1104" /></p>
+</div>
+<div id="u.s.---south-america-trade-balances-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. - South America Trade Balances-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/tradepartners5-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-mexio-and-canada-trade-balances-to-gdp" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Mexio and Canada Trade Balances-to-GDP</h3>
+<p><img src="cmd_chartpack_files/figure-html/tradepartners6-1.png" width="1104" /></p>
+</div>
+<div id="u.s.---brazil-trade-balance-to-gdp-and-real-exchange-rate" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. - Brazil Trade Balance-to-GDP and Real Exchange Rate</h3>
+<p><img src="cmd_chartpack_files/figure-html/bratrade-1.png" width="1104" /></p>
+</div>
+<div id="u.s.---canada-trade-balance-to-gdp-and-real-exchange-rate" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. - Canada Trade Balance-to-GDP and Real Exchange Rate</h3>
+<p><img src="cmd_chartpack_files/figure-html/cantrade-1.png" width="1104" /></p>
+</div>
+<div id="u.s.---mexico-trade-balance-to-gdp-and-real-exchange-rate" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. - Mexico Trade Balance-to-GDP and Real Exchange Rate</h3>
+<p><img src="cmd_chartpack_files/figure-html/mextrade-1.png" width="1104" /></p>
+</div>
+<div id="u.s.---europe-trade-balance-to-gdp-and-real-exchange-rate" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. - Europe Trade Balance-to-GDP and Real Exchange Rate</h3>
+<p><img src="cmd_chartpack_files/figure-html/gertrade-1.png" width="1104" /></p>
+</div>
+<div id="u.s.---u.k.-trade-balance-to-gdp-and-real-exchange-rate" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. - U.K. Trade Balance-to-GDP and Real Exchange Rate</h3>
+<p><img src="cmd_chartpack_files/figure-html/gbrtrade2-1.png" width="1104" /></p>
+</div>
+</div>
+<div id="new-based-indexes" class="section level2 unnumbered">
+<h2 class="unnumbered">New-Based Indexes</h2>
+<div id="geopolitical-risk" class="section level3 unnumbered">
+<h3 class="unnumbered">Geopolitical Risk</h3>
+<p><img src="cmd_chartpack_files/figure-html/gpraas-1.png" width="1104" /></p>
+</div>
+<div id="u.s.-economic-policy-uncertainty" class="section level3 unnumbered">
+<h3 class="unnumbered">U.S. Economic Policy Uncertainty</h3>
+<p><img src="cmd_chartpack_files/figure-html/epuss-1.png" width="1104" /></p>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+
+</body>
+</html>
