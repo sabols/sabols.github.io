@@ -42,7 +42,10 @@ cmd_meta_final$series_start <- lubridate::ymd(cmd_meta_final$series_start)
 Adding filtering!
 ```{r meta-filter, echo=FALSE}
 datatable(cmd_meta_final,  colnames = c("Start Date" = "series_start"), filter = 'top', options = list(
-  pageLength = 20, autoWidth = TRUE
+  pageLength = 20, autoWidth = TRUE,   initComplete = JS(
+    "function(settings, json) {",
+    "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+    "}")
 ))
 ```
 
