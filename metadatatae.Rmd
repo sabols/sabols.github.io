@@ -1,0 +1,48 @@
+---
+title: "metadatatables"
+author: "Steven Sabol"
+date: "7/16/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE,warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# Sys.setenv(JAVA_HOME='C:\\Program Files\\Java\\jre1.8.0_271') # for 64-bit versi
+
+library(DT)
+library(readxl)
+# meta_table <- read_excel("C:/Users/sabol/Google Drive/Model Master/Data/Update/meta_table.xlsx")
+# cmd_meta_final <- read_excel("C:/Users/sabol/Google Drive/Model Master/Data/Update/Meta/cmd_meta_final.xlsx", 
+#     col_types = c("text", "text", "date", 
+#         "date", "text", "text", "text", "text", 
+#         "text", "text", "text", "text", "text", 
+#         "numeric", "text", "text", "text", 
+#         "text", "text", "text", "text", "text", 
+#         "text", "text", "text", "text", "text", 
+#         "text", "text", "text", "text", "text", 
+#         "text", "text", "text", "text", "text", 
+#         "text", "text", "text"))
+
+cmd_meta_csv <- read.csv("C:/Users/sabol/Google Drive/Model Master/Data/Update/Meta/cmd_meta_final.csv")
+cmd_meta_csv <- cmd_meta_csv[,c(1:15)]
+cmd_meta_csv <- unique.data.frame(cmd_meta_csv)
+rownames(cmd_meta_csv) <- cmd_meta_csv$ï..cmd_id
+cmd_meta_final <- cmd_meta_csv[,-1]
+cmd_meta_final$series_start <- lubridate::ymd(cmd_meta_final$series_start)
+
+# cmd_meta_final <- cmd_meta_final[,c(1:13)]
+# row.names.data.frame(cmd_meta_final) <- cmd_meta_final$cmd_id
+# cmd_meta_final
+# plotting columns of a datatable https://laustep.github.io/stlahblog/posts/PlotDatatableColumns.html
+
+```
+
+## Data Tables
+
+Adding filtering!
+```{r meta-filter, echo=FALSE}
+datatable(cmd_meta_final,  colnames = c("Start Date" = "series_start"), filter = 'top', options = list(
+  pageLength = 20, autoWidth = TRUE
+))
+```
+
