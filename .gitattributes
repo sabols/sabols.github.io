@@ -1,5 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 #*.png filter=lfs diff=lfs merge=lfs -text
-cmd_chartpack_files/**/* filter=lfs diff=lfs merge=lfs -text
+# cmd_chartpack_files/**/* filter=lfs diff=lfs merge=lfs -text
 # cmddb_ggplot_files/**/* filter=lfs diff=lfs merge=lfs -text
