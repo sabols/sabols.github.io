@@ -302,52 +302,9 @@ ger_ltmunidebttogdp_ma <- as.vector(roll_mean(Data_xts$ger_net_muni_lt_debt_iss/
 ger_corpdebttogdp_ma <- as.vector(roll_mean(Data_xts$ger_net_nfc_debt_iss/Data_xts$ger_gdp_mv,9))
 ger_corpequitytogdp_ma <- as.vector(roll_mean(Data_xts$ger_net_nfc_equity_iss/Data_xts$ger_gdp_mv,9))
 
-# MortOrig <- xts(CMDData$mortorig, order.by = lubridate::ymd(CMDData$Date))
-# USTISSNB <- xts(CMDData$usbondandnotes_iss, order.by = lubridate::ymd(CMDData$Date))
-# CBISS <- xts(CMDData$corpbond_iss, order.by = lubridate::ymd(CMDData$Date))
-# MUNISS <- xts(CMDData$muni_iss, order.by = lubridate::ymd(CMDData$Date))
-# STOCKISS <- xts(CMDData$corpstock_iss, order.by = lubridate::ymd(CMDData$Date))
-# ngdplongm <- xts(CMDData$ngdpm, order.by = lubridate::ymd(CMDData$Date))
-# longrate <- xts(CMDData$ten, order.by = lubridate::ymd(CMDData$Date))
-# longrateaaa <- xts(CMDData$aaa, order.by = lubridate::ymd(CMDData$Date))
-# 
-# 
-# totaliss <- na.omit(MortOrig+roll_mean(USTISSNB,6)+ CBISS+MUNISS+STOCKISS)
-# totalissbind <- cbind.xts(MortOrig,roll_mean(USTISSNB,6), CBISS,MUNISS,STOCKISS)
-# 
-# 
-# totissten  <- scale(na.omit((cbind.xts(diff(SMA(log(totaliss/ngdplongm),3),12),-diff(longrateaaa,12)))))
-# 
-# mortissten <- scale(na.omit((cbind.xts(diff(log(MortOrig/ngdplongm),12),-diff(longrateaaa,12)))))
-
-
-
 ```
 
 ## Capital Market Issuance {-}
-
-```{r issplotother, message=FALSE, warning=FALSE, echo=FALSE, fig.height=6.5, fig.width=11.5,cache=FALSE}
-
-# Figure_issuance      <- ggplot(data=D, aes(x=Date)) + xlab("") + ylim(range(-10,15)) + ylab("")
-# g1 <- geom_line(aes(y=usbondtogdp_ma, color="UST Note & Bond Issuance-to-GDP",linetype="UST Note & Bond Issuance-to-GDP"))
-# g2 <- geom_line(aes(y=mortorigtogdp_ma, color="Mortgage Originations-to-GDP",linetype="Mortgage Originations-to-GDP"))
-# g3 <- geom_line(aes(y=munitogdp_ma, color="Muni Issuance-to-GDP",linetype="Muni Issuance-to-GDP"))
-# g4 <- geom_line(aes(y=corpbtogdp_ma + corpstockgdp_ma, color="Corporate Bond & Equity Issuance-to-GDP",linetype="Corporate Bond & Equity Issuance-to-GDP"))
-# 
-# color         <- scale_color_manual(" ", breaks=c("Mortgage Originations-to-GDP","UST Note & Bond Issuance-to-GDP","Corporate Bond & Equity Issuance-to-GDP","Muni Issuance-to-GDP"), values=c( "Mortgage Originations-to-GDP"="blue", "UST Note & Bond Issuance-to-GDP"="red","Corporate Bond & Equity Issuance-to-GDP" = "black","Muni Issuance-to-GDP" ="dark green"))
-# linetype      <- scale_linetype_manual(" ", breaks=c("Mortgage Originations-to-GDP","UST Note & Bond Issuance-to-GDP","Corporate Bond & Equity Issuance-to-GDP","Muni Issuance-to-GDP"), values=c("Mortgage Originations-to-GDP"=1,"UST Note & Bond Issuance-to-GDP"=1,"Corporate Bond & Equity Issuance-to-GDP"=1,"Muni Issuance-to-GDP"=2))
-# size          <- scale_size_manual(" ", breaks=c("Mortgage Originations-to-GDP","UST Note & Bond Issuance-to-GDP","Corporate Bond & Equity Issuance-to-GDP","Muni Issuance-to-GDP"), values=c("Mortgage Originations-to-GDP"=2,"UST Note & Bond Issuance-to-GDP"=2,"Corporate Bond & Equity Issuance-to-GDP"=2,"Muni Issuance-to-GDP"=3))
-# title         <- ggtitle("Capital Market Issuance-to-GDP")
-# text_options  <- theme(title = element_text(size = rel(1.1))) + theme(legend.text = element_text(size = rel(1.1)))  + theme(legend.title = element_text(size = rel(1.1)))
-# Date_opts     <- scale_x_date(limits = c(as.Date("1900-12-01"), as.Date("2021-12-01")), date_breaks = "5 year",date_labels = "%Y")
-# leg_pos       <-  theme(legend.position=c(0.05, 0.95), legend.justification = c(0,1),legend.title = element_blank()) 
-# sub_labs <- labs(subtitle="Capital Markets Data, 12MMA")
-# 
-# Figure_issuance <- Figure_issuance +g1+ g2 + g3+ g4 + color +linetype +size + title +text_options  +leg_pos +sub_labs + Date_opts
-# 
-# 
-# nberShade(Figure_issuance)
-```
 
 ### Capital Market Issuance-to-GDP {-}
 
@@ -9286,31 +9243,7 @@ nberShade(auto_plot_stocks) + yscale
 
 ```
 
-
 ## Commodity Prices
-
-### Core Inflation Factor {-}
-
-```{r coreinffactorplot, message=FALSE, warning=FALSE, echo=FALSE, fig.height=6.5, fig.width=11.5,cache=FALSE}
-
-figure_coreinffactorplot      <- ggplot(data=D, aes(x=Date)) + xlab("") + ylim(range(-10,15)) + ylab("")
-g1 <- geom_line(aes(y=Data$stock_price, color="Auto Sales",linetype="Auto Sales"))
-g2 <- geom_line(aes(y=Data$coreinffactor, color="Core Inflation Factor",linetype="Core Inflation Factor"))
-
-color         <- scale_color_manual(" ", breaks=c("Core Inflation Factor","Auto Sales"), values=c( "Core Inflation Factor"="blue", "Auto Sales"="red"))
-linetype      <- scale_linetype_manual(" ", breaks=c("Core Inflation Factor","Auto Sales"), values=c("Core Inflation Factor"=1,"Auto Sales"=1))
-size          <- scale_size_manual(" ", breaks=c("Core Inflation Factor","Auto Sales"), values=c("Core Inflation Factor"=2,"Auto Sales"=2))
-title         <- ggtitle("Core Inflation Factor")
-text_options  <- theme(title = element_text(size = rel(1.1))) + theme(legend.text = element_text(size = rel(1.1)))  + theme(legend.title = element_text(size = rel(1.1)))
-Date_opts     <- scale_x_date(limits = c(as.Date("1967-12-01"), as.Date("2021-12-01")), date_breaks = "3 year",date_labels = "%Y")
-leg_pos       <-  theme(legend.position = "none")
-sub_labs <- labs(subtitle="Capital Markets Data; Gospodinov, N. and Ng, S., (2013)")
-
-yscale <- scale_y_continuous(sec.axis = dup_axis(),breaks=round(seq(-2,2.25, .25),2),limits = c(-2,2.25))
-figure_coreinffactorplot <- figure_coreinffactorplot + g2 + color +linetype +size + title +text_options +hline+ Date_opts +leg_pos +sub_labs
-
-nberShade(figure_coreinffactorplot) + yscale
-```
 
 ###  BAA-10yr Spread and ISM Prices Index {-}
 
