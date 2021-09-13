@@ -23,12 +23,16 @@ library(readxl)
 #         "text", "text", "text", "text", "text", 
 #         "text", "text", "text"))
 
-cmd_meta_csv <- read.csv("C:/Users/sabol/Google Drive/Model Master/Data/Update/Meta/cmd_meta_final.csv")
-cmd_meta_csv <- cmd_meta_csv[,c(1:15)]
-cmd_meta_csv <- unique.data.frame(cmd_meta_csv)
-rownames(cmd_meta_csv) <- cmd_meta_csv$ï..cmd_id
-cmd_meta_final <- cmd_meta_csv[,-1]
-cmd_meta_final$series_start <- lubridate::ymd(cmd_meta_final$series_start)
+cmd_meta_csv <- read_excel("C:/Users/sabol/Google Drive/Model Master/Data/Update/Meta/Final_Monthly/final_meta_website.xlsx")
+cmd_meta_csv <- data.frame(cmd_meta_csv[,c(1:15)])
+cmd_meta_csv <- (unique.data.frame(cmd_meta_csv))
+
+# cmd_meta_csv = cmd_meta_csv[duplicated(cmd_meta_csv$ï..cmd_id) == FALSE,]
+# rownames(cmd_meta_csv) <- cmd_meta_csv$ï..cmd_id
+# cmd_meta_final <- (cmd_meta_csv[,-1])
+cmd_meta_final <- cmd_meta_csv
+
+# cmd_meta_final$series_start <- lubridate::ymd(cmd_meta_final$series_start)
 
 # cmd_meta_final <- cmd_meta_final[,c(1:13)]
 # row.names.data.frame(cmd_meta_final) <- cmd_meta_final$cmd_id
@@ -41,7 +45,7 @@ cmd_meta_final$series_start <- lubridate::ymd(cmd_meta_final$series_start)
 
 Adding filtering!
 ```{r meta-filter, echo=FALSE}
-datatable(cmd_meta_final,  colnames = c("Start Date" = "series_start"), filter = 'top', options = list(
+datatable(cmd_meta_final,  colnames = c("Start Date" = "start_date"), filter = 'top', options = list(
   pageLength = 20, autoWidth = TRUE,   initComplete = JS(
     "function(settings, json) {",
     "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
