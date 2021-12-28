@@ -11,6 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 library(DT)
 library(readxl)
+library(tidyverse)
 # meta_table <- read_excel("C:/Users/sabol/Google Drive/Model Master/Data/Update/meta_table.xlsx")
 # cmd_meta_final <- read_excel("C:/Users/sabol/Google Drive/Model Master/Data/Update/Meta/cmd_meta_final.xlsx", 
 #     col_types = c("text", "text", "date", 
@@ -24,7 +25,16 @@ library(readxl)
 #         "text", "text", "text"))
 
 cmd_meta_csv <- read_excel("C:/Users/sabol/Google Drive/Model Master/Data/Update/Meta/Final_Monthly/final_meta_website.xlsx")
-cmd_meta_csv <- data.frame(cmd_meta_csv[,c(1:15)])
+cmd_meta_csv <- data.frame(cmd_meta_csv[,c(1:15)]) #5777
+cmd_meta_csv = cmd_meta_csv[!duplicated(cmd_meta_csv$cmd_id),] #5766
+
+cmd_meta_all <- read_excel("C:/Users/sabol/Google Drive/Model Master/Data/Update/Meta/Final_Monthly/final_meta_all.xlsx")
+cmd_meta_dups = cmd_meta_all[duplicated(cmd_meta_all$cmd_id),] #5766
+
+df[duplicated(df) | duplicated(df, fromLast=TRUE), ]
+
+cmd_meta_dups = cmd_meta_all %>% group_by_at(vars(cmd_id)) %>% filter(n()>1) %>% ungroup()
+
 cmd_meta_csv <- (unique.data.frame(cmd_meta_csv))
 
 # cmd_meta_csv = cmd_meta_csv[duplicated(cmd_meta_csv$ï..cmd_id) == FALSE,]
@@ -32,7 +42,7 @@ cmd_meta_csv <- (unique.data.frame(cmd_meta_csv))
 # cmd_meta_final <- (cmd_meta_csv[,-1])
 cmd_meta_final <- cmd_meta_csv
 
-# cmd_meta_final$series_start <- lubridate::ymd(cmd_meta_final$series_start)
+cmd_meta_final$series_start <- lubridate::ymd(cmd_meta_final$series_start)
 
 # cmd_meta_final <- cmd_meta_final[,c(1:13)]
 # row.names.data.frame(cmd_meta_final) <- cmd_meta_final$cmd_id
